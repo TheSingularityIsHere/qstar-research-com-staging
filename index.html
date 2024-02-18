@@ -2,27 +2,202 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <meta http-equiv="refresh" content="0;url=https://singularityishere.org"> -->
+<title>Q.S.T.A.R. Research</title>
 
 <style>
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  margin: 0;
-  background: #aff;
+
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  font-family: "Lora", serif;
 }
 
-.comingsoon {
-  display: inline-box;
-  text-align: center;
-  font-size: 10vw;
-  font-family: Helvetica, sans-serif;
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: #2a3f54;
+  color: #ddd;
 }
+
+.header-image, .wide-image, .member-image {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds shadow to images for depth */
+}
+
+.container {
+  padding-top: 1em;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.header-image {
+  width: 100%;
+  height: auto;
+}
+
+.wide-image {
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.member-image {
+  width: 20%;
+  max-width: 10em;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  display: block;
+}
+
+p, li {
+  text-align: justify;
+  /* margin: 0; */
+}
+
+.board-member {
+  margin-bottom: 20px;
+  display: flex;
+  gap: 2em;
+  align-items: center;
+}
+
+.board-member > div {
+  flex-grow: 1;
+}
+
+
+@media only screen and (max-width: 640px) and (orientation: portrait) {
+  p, li {
+    text-align: left;
+  }
+  .container {
+    width: 95%;
+  }
+  h1 { font-size: 1.3em; }
+  h2 { font-size: 1.1em; }
+  h3 { font-size: 1.0em; }
+  .board-member {
+    flex-direction: column;
+    gap: 0;
+    text-align: left;
+    margin-bottom: 2em;
+  }
+  .member-image {
+    width: 40%;
+  }
+  .line {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5em;
+  }
+  .affiliations ul {
+    list-style: none;
+    padding: 0;
+  }
+  .affiliations ul li {
+    margin-bottom: 1em;
+  }
+}
+@media only screen and (max-height: 640px) and (orientation: landscape) {
+}
+
+@media only screen and (min-width: 641px) and (max-width: 1024px) {
+}
+
 </style>
 
-<div class="comingsoon">Coming soon...</div>
+<div class="container">
+  <header>
+    <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
+    <h1>Q.S.T.A.R. Research: Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today</h1>
+  </header>
+
+  <section class="focus">
+      <p>Located at the iconic Kraftwerk in Zürich, Q.S.T.A.R. Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
+      <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
+  </section>
+
+  <section class="importance">
+      <h2>Why This Project Matters:</h2>
+      <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
+  </section>
+
+  <section class="commitment">
+      <h2>Our Commitment as a Privately Funded NGO:</h2>
+      <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
+  </section>
+
+  <section class="advisory-board">
+      <h2>Q.S.T.A.R. Research Advisory Board</h2>
+      <div class="board-member">
+          <img src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
+          <div>
+            <h3>Dr. Helena Morgenstern</h3>
+            <p>
+              <span class="line"><span>Position:</span> <span>Chair of the Board<br></span></span>
+              <span class="line"><span>Background:</span> <span>Renowned Quantum Physicist and Public Science Communicator<br></span></span>
+              <span class="line"><span>Expertise:</span> <span>Quantum Computing and Theoretical Physics<br></span></span>
+              <span class="line"><span>Contribution:</span> <span>Guides the scientific direction of Q.S.T.A.R., especially in quantum technology applications<br></span></span>
+            </p>
+          </div>
+      </div>
+      <div class="board-member">
+          <img src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
+          <div>
+            <h3>Prof. Eduardo Rivera</h3>
+            <p>
+              <span class="line"><span>Position:</span> <span>Ethics and AI Governance Expert<br></span></span>
+              <span class="line"><span>Background:</span> <span>Professor of Ethics in AI at the Institute of Advanced Study<br></span></span>
+              <span class="line"><span>Expertise:</span> <span>AI Ethics, Human Rights in the Digital Age<br></span></span>
+              <span class="line"><span>Contribution:</span> <span>Oversees the ethical frameworks and policies related to AGI and ASI development.</span></span>
+            </p>
+          </div>
+      </div>
+      <div class="board-member">
+          <img src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
+          <div>
+            <h3>Dr. Lina Zhou</h3>
+            <p>
+              <span class="line"><span>Position:</span> <span>Technology and Innovation Strategist<br></span></span>
+              <span class="line"><span>Background:</span> <span>Former Tech Executive, Startup Mentor<br></span></span>
+              <span class="line"><span>Expertise:</span> <span>Emerging Technologies, Business Strategy<br></span></span>
+              <span class="line"><span>Contribution:</span> <span>Advises on technological trends and innovation management.</span></span>
+            </p>
+          </div>
+      </div>
+      <div class="board-member">
+          <img src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
+          <div>
+            <h3>Dr. Rajesh Kumar</h3>
+            <p>
+              <span class="line"><span>Position:</span> <span>Philosophy and AI Advisor<br></span></span>
+              <span class="line"><span>Background:</span> <span>Philosopher, Author on AI and Consciousness<br></span></span>
+              <span class="line"><span>Expertise:</span> <span>Philosophy of Mind, AI Consciousness<br></span></span>
+              <span class="line"><span>Contribution:</span> <span>Provides insights on philosophical aspects of AI and its implications on human consciousness.</span></span>
+            </p>
+          </div>
+      </div>
+  </section>
+
+  <section class="affiliations">
+      <h2>Affiliations for Q.S.T.A.R. Research</h2>
+      <ul>
+          <li>
+            <b>Artificial Superintelligence Oversight Network (ASION):</b>
+            "Ensuring transparency and accountability in ASI development, ASION brings together experts to oversee and analyze the societal impacts of superintelligent systems."
+          </li>
+          <li>
+            <b>Quantum Technologies and AI Safety Consortium (QTASC):</b>
+            "Championing safe and ethical quantum advancements, QTASC collaborates with global partners to guide AI towards benefiting humanity and reducing existential risks."
+          </li>
+          <li>
+            <b>Global AI Ethics and Risk Research Institute (GAERRI):</b>
+            "GAERRI is dedicated to researching and promoting ethical AI practices. We explore the implications of AGI and ASI on society, aiming to mitigate risks and ensure responsible development."
+          </li>
+      </ul>
+  </section>
+</div>
 
 <script type="text/javascript">
 fetch('https://figur.li/l/?tag=loaded');
