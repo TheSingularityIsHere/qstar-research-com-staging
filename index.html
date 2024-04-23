@@ -1,15 +1,34 @@
 <!DOCTYPE html>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Q.S.T.A.R. Research</title>
-<meta property="og:title" content="Q.S.T.A.R. Research – Official Website" />
-<meta property="og:description" content="Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today." />
-<meta property="og:image" content="https://qstar-research.com/qstar_hq_og.jpg" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Q.S.T.A.R. Research</title>
+  <meta property="og:title" content="Q.S.T.A.R. Research – Official Website" />
+  <meta property="og:description" content="Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today." />
+  <meta property="og:image" content="https://qstar-research.com/qstar_hq_og.jpg" />
+  <link rel="apple-touch-icon" href="qstar_logo_180px.png" sizes="180x180">
+  <link rel="icon" href="qstar_logo_180px.png">
+  <meta name="theme-color" content="#2a3f54">
+</head>
 
 <style>
 
+/* General */
+
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  --fg: #ddd;
+  --bg: #2a3f54;
+  --max-width: 1320px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+  }
+}
+
 
 * {
   font-family: "Lora", serif;
@@ -17,9 +36,12 @@
 
 body, html {
   margin: 0;
-  padding: 0;
-  background-color: #2a3f54;
-  color: #ddd;
+  background-color: var(--bg);
+  color: var(--fg);
+}
+
+a, a:visited {
+  color: var(--fg);
 }
 
 .header-image, .wide-image, .member-image {
@@ -27,8 +49,8 @@ body, html {
 }
 
 .container {
-  padding-top: 1em;
-  width: 80%;
+  padding: 0 0.5em;
+  max-width: var(--max-width);
   margin: auto;
   overflow: hidden;
 }
@@ -110,98 +132,307 @@ p, li {
 
 </style>
 
+<style>
+
+/* Navigation */
+
+header {
+  display: flex;
+  padding: 0 0.5em;
+  font-size: larger;
+
+  max-width: var(--max-width);
+  margin: 2em auto;
+
+  a {
+    text-decoration: none;
+  }
+
+  .wrapper {
+    flex: 1;
+    display: flex;
+
+    .burger {
+      display: none;
+    }
+  }
+
+  nav {
+    display: flex;
+    gap: 1em;
+  }
+}
+
+footer {
+  margin-top: 4em;
+  border-top: 1px solid;
+  padding: 2em;
+
+  a {
+    text-decoration: none;
+  }
+
+  nav {
+    display: flex;
+    gap: 1em;
+
+    .spacer {
+      flex: 1
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  header .wrapper burger {
+    display: block;
+  }
+}
+
+</style>
+  
+
+<header>
+  <div class="wrapper">
+    <a href="#/" aria-label="Home">QSTAR research</a>
+    <button class="burger" aria-label="Navigation menu">
+      <svg class="icon" width="40" height="40" viewBox="0 0 40 40"><path d="M5.418 25.375v-2.083h29.166v2.083H5.418Zm0-8.667v-2.083h29.166v2.083H5.418Z"></path></svg>
+    </button>
+  </div>
+  <nav>
+    <a href="#/deliar">DeLiar</a>
+    <a href="#/research">Research</a>
+    <a href="#/events">Events</a>
+    <a href="#/company">Company</a>
+    <a href="#/careers">Careers</a>
+  </nav>
+</header>
+
 <div class="container">
-  <header>
+
+  <div data-hash="#/">
+
     <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
     <h1>Q.S.T.A.R. Research: Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today</h1>
-  </header>
 
-  <section class="focus">
-      <p>Located at the iconic Kraftwerk in Zürich, Q.S.T.A.R. Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
-      <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
-  </section>
+    <section class="focus">
+        <p>Located at the iconic Kraftwerk in Zürich, Q.S.T.A.R. Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
+        <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
+    </section>
 
-  <section class="importance">
-      <h2>Why This Project Matters:</h2>
-      <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
-  </section>
+    <section class="importance">
+        <h2>Why This Project Matters:</h2>
+        <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
+    </section>
 
-  <section class="commitment">
-      <h2>Our Commitment as a Privately Funded NGO:</h2>
-      <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
-  </section>
+    <section class="commitment">
+        <h2>Our Commitment as a Privately Funded NGO:</h2>
+        <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
+    </section>
+  </div>
 
-  <section class="advisory-board">
-      <h2>Q.S.T.A.R. Research Advisory Board</h2>
-      <div class="board-member">
-          <img src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
-          <div>
-            <h3>Dr. Helena Morgenstern</h3>
-            <p>
-              <span class="line"><span>Position:</span> <span>Chair of the Board<br></span></span>
-              <span class="line"><span>Background:</span> <span>Renowned Quantum Physicist and Public Science Communicator<br></span></span>
-              <span class="line"><span>Expertise:</span> <span>Quantum Computing and Theoretical Physics<br></span></span>
-              <span class="line"><span>Contribution:</span> <span>Guides the scientific direction of Q.S.T.A.R., especially in quantum technology applications<br></span></span>
-            </p>
-          </div>
-      </div>
-      <div class="board-member">
-          <img src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
-          <div>
-            <h3>Prof. Eduardo Rivera</h3>
-            <p>
-              <span class="line"><span>Position:</span> <span>Ethics and AI Governance Expert<br></span></span>
-              <span class="line"><span>Background:</span> <span>Professor of Ethics in AI at the Institute of Advanced Study<br></span></span>
-              <span class="line"><span>Expertise:</span> <span>AI Ethics, Human Rights in the Digital Age<br></span></span>
-              <span class="line"><span>Contribution:</span> <span>Oversees the ethical frameworks and policies related to AGI and ASI development.</span></span>
-            </p>
-          </div>
-      </div>
-      <div class="board-member">
-          <img src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
-          <div>
-            <h3>Dr. Lina Zhou</h3>
-            <p>
-              <span class="line"><span>Position:</span> <span>Technology and Innovation Strategist<br></span></span>
-              <span class="line"><span>Background:</span> <span>Former Tech Executive, Startup Mentor<br></span></span>
-              <span class="line"><span>Expertise:</span> <span>Emerging Technologies, Business Strategy<br></span></span>
-              <span class="line"><span>Contribution:</span> <span>Advises on technological trends and innovation management.</span></span>
-            </p>
-          </div>
-      </div>
-      <div class="board-member">
-          <img src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
-          <div>
-            <h3>Dr. Rajesh Kumar</h3>
-            <p>
-              <span class="line"><span>Position:</span> <span>Philosophy and AI Advisor<br></span></span>
-              <span class="line"><span>Background:</span> <span>Philosopher, Author on AI and Consciousness<br></span></span>
-              <span class="line"><span>Expertise:</span> <span>Philosophy of Mind, AI Consciousness<br></span></span>
-              <span class="line"><span>Contribution:</span> <span>Provides insights on philosophical aspects of AI and its implications on human consciousness.</span></span>
-            </p>
-          </div>
-      </div>
-  </section>
+  <div data-hash="#/company">
 
-  <section class="affiliations">
-      <h2>Affiliations for Q.S.T.A.R. Research</h2>
-      <ul>
-          <li>
-            <b>Artificial Superintelligence Oversight Network (ASION):</b>
-            "Ensuring transparency and accountability in ASI development, ASION brings together experts to oversee and analyze the societal impacts of superintelligent systems."
-          </li>
-          <li>
-            <b>Quantum Technologies and AI Safety Consortium (QTASC):</b>
-            "Championing safe and ethical quantum advancements, QTASC collaborates with global partners to guide AI towards benefiting humanity and reducing existential risks."
-          </li>
-          <li>
-            <b>Global AI Ethics and Risk Research Institute (GAERRI):</b>
-            "GAERRI is dedicated to researching and promoting ethical AI practices. We explore the implications of AGI and ASI on society, aiming to mitigate risks and ensure responsible development."
-          </li>
-      </ul>
-  </section>
+    <section class="advisory-board">
+        <h2>Q.S.T.A.R. Research Advisory Board</h2>
+        <div class="board-member">
+            <img src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
+            <div>
+              <h3>Dr. Helena Morgenstern</h3>
+              <p>
+                <span class="line"><span>Position:</span> <span>Chair of the Board<br></span></span>
+                <span class="line"><span>Background:</span> <span>Renowned Quantum Physicist and Public Science Communicator<br></span></span>
+                <span class="line"><span>Expertise:</span> <span>Quantum Computing and Theoretical Physics<br></span></span>
+                <span class="line"><span>Contribution:</span> <span>Guides the scientific direction of Q.S.T.A.R., especially in quantum technology applications<br></span></span>
+              </p>
+            </div>
+        </div>
+        <div class="board-member">
+            <img src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
+            <div>
+              <h3>Prof. Eduardo Rivera</h3>
+              <p>
+                <span class="line"><span>Position:</span> <span>Ethics and AI Governance Expert<br></span></span>
+                <span class="line"><span>Background:</span> <span>Professor of Ethics in AI at the Institute of Advanced Study<br></span></span>
+                <span class="line"><span>Expertise:</span> <span>AI Ethics, Human Rights in the Digital Age<br></span></span>
+                <span class="line"><span>Contribution:</span> <span>Oversees the ethical frameworks and policies related to AGI and ASI development.</span></span>
+              </p>
+            </div>
+        </div>
+        <div class="board-member">
+            <img src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
+            <div>
+              <h3>Dr. Lina Zhou</h3>
+              <p>
+                <span class="line"><span>Position:</span> <span>Technology and Innovation Strategist<br></span></span>
+                <span class="line"><span>Background:</span> <span>Former Tech Executive, Startup Mentor<br></span></span>
+                <span class="line"><span>Expertise:</span> <span>Emerging Technologies, Business Strategy<br></span></span>
+                <span class="line"><span>Contribution:</span> <span>Advises on technological trends and innovation management.</span></span>
+              </p>
+            </div>
+        </div>
+        <div class="board-member">
+            <img src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
+            <div>
+              <h3>Dr. Rajesh Kumar</h3>
+              <p>
+                <span class="line"><span>Position:</span> <span>Philosophy and AI Advisor<br></span></span>
+                <span class="line"><span>Background:</span> <span>Philosopher, Author on AI and Consciousness<br></span></span>
+                <span class="line"><span>Expertise:</span> <span>Philosophy of Mind, AI Consciousness<br></span></span>
+                <span class="line"><span>Contribution:</span> <span>Provides insights on philosophical aspects of AI and its implications on human consciousness.</span></span>
+              </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="affiliations">
+        <h2>Affiliations for Q.S.T.A.R. Research</h2>
+        <ul>
+            <li>
+              <b>Artificial Superintelligence Oversight Network (ASION):</b>
+              "Ensuring transparency and accountability in ASI development, ASION brings together experts to oversee and analyze the societal impacts of superintelligent systems."
+            </li>
+            <li>
+              <b>Quantum Technologies and AI Safety Consortium (QTASC):</b>
+              "Championing safe and ethical quantum advancements, QTASC collaborates with global partners to guide AI towards benefiting humanity and reducing existential risks."
+            </li>
+            <li>
+              <b>Global AI Ethics and Risk Research Institute (GAERRI):</b>
+              "GAERRI is dedicated to researching and promoting ethical AI practices. We explore the implications of AGI and ASI on society, aiming to mitigate risks and ensure responsible development."
+            </li>
+        </ul>
+    </section>
+  </div>
+
+  <div data-hash="#/privacy">
+
+    <h2>Privacy Statement</h2>
+    <p><strong>Effective Date:</strong> 2024-04-01</p>
+
+    <p>At Q.S.T.A.R. Research, located in the iconic Kraftwerk in Zürich and home to the world’s fastest supercomputer, we are committed to protecting the privacy and security of our visitors' information. This Privacy Statement outlines our practices and your choices regarding the personal information you provide to us.</p>
+
+    <h3>1. Information We Collect</h3>
+    <p>We collect information to provide better services to all our users. The types of information we collect depend on your interactions with our website and services. This information can be categorized into the following:</p>
+    <ul>
+        <li><strong>Personal Information:</strong> This includes information that you voluntarily provide to us, such as your name, email address, and telephone number, which we collect through contact forms, newsletter subscriptions, or event registrations.</li>
+        <li><strong>Automated Information:</strong> We automatically collect certain information when you visit our website, such as your IP address, browser type, and interaction with our website, through cookies and other tracking technologies.</li>
+        <li><strong>Research Data:</strong> Given our research focus, we may collect data pertinent to studies of Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI), which could include both anonymized data and personal data volunteered for scientific research.</li>
+    </ul>
+
+    <h3>2. Use of Information</h3>
+    <p>The information we collect is used to provide, maintain, and improve our services, to develop new services, and to protect Q.S.T.A.R. Research and our users. More specifically, we use the information to:</p>
+    <ul>
+        <li>Communicate with you, including sending updates on our research and responding to your inquiries;</li>
+        <li>Enhance our website and user experience;</li>
+        <li>Conduct academic and scientific research;</li>
+        <li>Ensure network and information security.</li>
+    </ul>
+
+    <h3>3. Information Sharing</h3>
+    <p>Q.S.T.A.R. Research does not sell or rent personal information to marketers or unaffiliated third parties. We share information with third parties as follows:</p>
+    <ul>
+        <li><strong>Service Providers:</strong> We provide information to trusted partners who work on behalf of or with Q.S.T.A.R. Research under confidentiality agreements. These companies may use your personal information to help us communicate with you about offers from us and our marketing partners.</li>
+        <li><strong>Legal Reasons:</strong> We will share personal information outside of Q.S.T.A.R. Research if we have a good-faith belief that access, use, preservation, or disclosure of the information is reasonably necessary to:
+            <ul>
+                <li>Meet any applicable law, regulation, legal process, or enforceable governmental request.</li>
+                <li>Enforce applicable Terms of Service, including investigation of potential violations.</li>
+                <li>Detect, prevent, or otherwise address fraud, security, or technical issues.</li>
+                <li>Protect against harm to the rights, property, or safety of Q.S.T.A.R. Research, our users, or the public as required or permitted by law.</li>
+            </ul>
+        </li>
+    </ul>
+
+    <h3>4. Data Security</h3>
+    <p>We strive to protect the confidentiality and security of the information it collects by employing appropriate technical and organizational measures designed to protect the information against unauthorized or unlawful processing and against accidental loss, destruction, or damage.</p>
+
+    <h3>5. Your Rights</h3>
+    <p>You have certain rights regarding the personal information we hold about you. These may include the right to access, correct, delete, or restrict the use of your personal information, as well as the right to withdraw consent to use your personal information. If you wish to exercise these rights, please contact us at the details provided below.</p>
+
+    <h3>6. Changes to Our Privacy Policy</h3>
+    <p>We may update this Privacy Statement from time to time. We will notify you of any changes by posting the new Privacy Statement on this page. We encourage you to review this Privacy Statement periodically for any changes.</p>
+
+    <h3>Contact Us</h3>
+    <p>If you have any questions about this Privacy Statement
+
+  </div>
+
+  <div data-hash="#/terms-of-use">
+    <h2>Terms of Use</h2>
+    <p><strong>Effective Date:</strong> 2024-04-01</p>
+
+    <p>Welcome to Q.S.T.A.R. Research. If you continue to browse and use this website, you are agreeing to comply with and be bound by the following terms and conditions of use, which together with our Privacy Policy govern Q.S.T.A.R. Research's relationship with you in relation to this website.</p>
+
+    <h3>1. General Terms</h3>
+    <p>By accessing this website, you are agreeing to be bound by these website Terms and Conditions of Use, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws. If you do not agree with any of these terms, you are prohibited from using or accessing this site.</p>
+
+    <h3>2. Use License</h3>
+    <p>
+    Permission is granted to temporarily download one copy of the materials (information or software) on Q.S.T.A.R. Research's website for personal, non-commercial transitory viewing only. This is the grant of a license, not a transfer of title, and under this license you may not:
+    <ul>
+      <li>modify or copy the materials;</li>
+      <li>use the materials for any commercial purpose, or for any public display (commercial or non-commercial);</li>
+      <li>attempt to decompile or reverse engineer any software contained on Q.S.T.A.R. Research's website;</li>
+      <li>remove any copyright or other proprietary notations from the materials; or</li>
+      <li>transfer the materials to another person or "mirror" the materials on any other server.</li>
+    </ul>
+    This license shall automatically terminate if you violate any of these restrictions and may be terminated by Q.S.T.A.R. Research at any time. Upon terminating your viewing of these materials or upon the termination of this license, you must destroy any downloaded materials in your possession whether in electronic or printed format.
+    </p>
+
+    <h3>3. AGI/ASI Guardrails</h3>
+    <p>As a condition of use, you are required to implement appropriate guardrails for Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) to mitigate risks associated with these technologies. Q.S.T.A.R. Research is not liable for any damages that result from the failure to establish or maintain such guardrails, or from the risks inherent in the development, use, or deployment of AGI/ASI technologies.</p>
+
+    <h3>4. Disclaimer</h3>
+    <p>The materials on Q.S.T.A.R. Research's website are provided "as is". Q.S.T.A.R. Research makes no warranties, expressed or implied, and hereby disclaims and negates all other warranties, including without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights. Further, Q.S.T.A.R. Research does not warrant or make any representations concerning the accuracy, likely results, or reliability of the use of the materials on its Internet site or otherwise relating to such materials or on any sites linked to this site.</p>
+
+    <h3>5. Limitations</h3>
+    <p>In no event shall Q.S.T.A.R. Research or its suppliers be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption,) arising out of the use or inability to use the materials on Q.S.T.A.R. Research's Internet site, even if Q.S.T.A.R. Research or a Q.S.T.A.R. Research authorized representative has been notified orally or in writing of the possibility of such damage.</p>
+
+    <h3>6. Revisions and Errata</h3>
+    <p>The materials appearing on Q.S.T.A.R. Research's website could include technical, typographical, or photographic errors. Q.S.T.A.R. Research does not warrant that any of the materials on its website are accurate, complete, or current. Q.S.T.A.R. Research may make changes to the materials contained on its website at any time without notice. Q.S.T.A.R. Research does not, however, make any commitment to update the materials.</p>
+  </div>
+
+  <div data-hash="#404">
+      <h1>Page Not Found</h1>
+    <p>
+      This site is under heavy construction. Some pages are not fully designed yet. Please come back shortly to see if the content you're looking for has been added.
+    </p>
+  </div>
+
 </div>
 
+<footer>
+
+  <nav>
+    <a href="https://twitter.com/gklain" target="_blank">Twitter</a>
+    <a href="https://ch.linkedin.com/company/gianklain" target="_blank">LinkedIn</a>
+    <a href="info@qstar-research.com" target="_blank">Email</a>
+    <div class="spacer">&nbsp;</div>
+    <a href="#/privacy">Privacy</a>
+    <a href="#/terms-of-use">Terms of Use</a>
+    <div>©QSTAR research 2024</div>
+  </nav>
+
+</footer>
+
 <script type="text/javascript">
-fetch('https://figur.li/l/?tag=loaded');
+
+(async () => fetch('https://figur.li/l/?tag=loaded'))();
+
+const els = [...document.querySelectorAll('*')].filter(e => e.dataset.hash);
+const fouroufour = document.querySelector('[data-hash="#404"]');
+
+function hashed() {
+  let notfound = true;
+  for (const el of els) {
+    const found = el.dataset.hash === location.hash;
+    el.style.display = found ? null : 'none';
+    notfound &= !found;
+  }
+  fouroufour.style.display = notfound ? null : 'none';
+}
+
+window.addEventListener('hashchange', hashed);
+
+location.hash || (location.hash = '#/');
+hashed();
+
 </script>
