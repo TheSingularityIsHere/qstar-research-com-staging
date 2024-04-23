@@ -12,8 +12,7 @@
   <meta name="theme-color" content="#2a3f54">
 </head>
 
-<style>
-
+<style class="general">
 /* General */
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
@@ -28,7 +27,6 @@
   :root {
   }
 }
-
 
 * {
   font-family: "Lora", serif;
@@ -91,7 +89,6 @@ p, li {
   flex-grow: 1;
 }
 
-
 @media only screen and (max-width: 640px) and (orientation: portrait) {
   p, li {
     text-align: left;
@@ -124,39 +121,39 @@ p, li {
     margin-bottom: 1em;
   }
 }
+
 @media only screen and (max-height: 640px) and (orientation: landscape) {
 }
 
 @media only screen and (min-width: 641px) and (max-width: 1024px) {
 }
-
 </style>
 
-<style>
-
+<style class="nav">
 /* Navigation */
 
 header {
   display: flex;
+  align-items: center;
   padding: 0 0.5em;
   font-size: larger;
-
   max-width: var(--max-width);
   margin: 2em auto;
-
   a {
     text-decoration: none;
   }
-
-  .wrapper {
+  .spacer {
     flex: 1;
-    display: flex;
-
-    .burger {
-      display: none;
+  }
+  .toggle {
+    display: none;
+    border: 0;
+    background: none;
+    svg path {
+      fill: var(--fg);
+      stroke: var(--fg);
     }
   }
-
   nav {
     display: flex;
     gap: 1em;
@@ -164,40 +161,80 @@ header {
 }
 
 footer {
+  display: flex;
   margin-top: 4em;
   border-top: 1px solid;
   padding: 2em;
-
+  white-space: pre;
   a {
     text-decoration: none;
   }
-
-  nav {
+  .navs {
     display: flex;
-    gap: 1em;
-
-    .spacer {
+    flex: 1;
+    nav {
+      display: flex;
+      gap: 1em;
+    }
+  .spacer {
       flex: 1
     }
   }
 }
 
 @media only screen and (max-width: 640px) {
-  header .wrapper burger {
-    display: block;
+  header {
+    &.shown {
+      nav {
+        display: flex;
+      }
+      .toggle {
+        position: absolute;
+        z-index: 1;
+        top: 3em;
+        right: 0.5em;
+        .close {
+          display: block;
+        }
+        .burger {
+          display: none;
+        }
+      }
+    }
+    nav {
+      display: none;
+      position: absolute;
+      background: var(--bg);
+      left: 0; right: 0; top: 0; bottom: 0;
+      flex-direction: column;
+      padding: 2em;
+    }
+    .toggle {
+      display: block;
+      .close {
+        display: none;
+      }
+    }
+    .close {
+      display: block;
+      position: relative;
+      top: 0;
+      left: 0;
+    }
+  }
+  footer .navs {
+    flex-direction: column;
   }
 }
-
 </style>
-  
 
 <header>
-  <div class="wrapper">
-    <a href="#/" aria-label="Home">QSTAR research</a>
-    <button class="burger" aria-label="Navigation menu">
-      <svg class="icon" width="40" height="40" viewBox="0 0 40 40"><path d="M5.418 25.375v-2.083h29.166v2.083H5.418Zm0-8.667v-2.083h29.166v2.083H5.418Z"></path></svg>
-    </button>
-  </div>
+  <a href="#/" aria-label="Home">QSTAR</a>
+  <div class="spacer"></div>
+  <button class="toggle" aria-label="Toggle navigation menu">
+    <svg class="burger" width="40" height="40" viewBox="0 0 40 40"><path d="M5.418 25.375v-2.083h29.166v2.083H5.418Zm0-8.667v-2.083h29.166v2.083H5.418Z"></path></svg>
+    <svg class="close" width="40" height="40" viewBox="0 0 40 40"><path d="m10.543 30.958-1.5-1.5 9.5-9.458-9.5-9.458 1.5-1.5 9.458 9.5 9.458-9.5 1.5 1.5-9.5 9.458 9.5 9.458-1.5 1.5-9.458-9.5-9.458 9.5Z"></path></svg>
+  </button>
   <nav>
     <a href="#/deliar">DeLiar</a>
     <a href="#/research">Research</a>
@@ -209,7 +246,7 @@ footer {
 
 <div class="container">
 
-  <div data-hash="#/">
+  <div data-hash="#/" class="home">
 
     <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
     <h1>Q.S.T.A.R. Research: Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today</h1>
@@ -230,7 +267,7 @@ footer {
     </section>
   </div>
 
-  <div data-hash="#/company">
+  <div data-hash="#/company" class="company">
 
     <section class="advisory-board">
         <h2>Q.S.T.A.R. Research Advisory Board</h2>
@@ -303,7 +340,7 @@ footer {
     </section>
   </div>
 
-  <div data-hash="#/privacy">
+  <div data-hash="#/privacy" class="privacy">
 
     <h2>Privacy Statement</h2>
     <p><strong>Effective Date:</strong> 2024-04-01</p>
@@ -355,7 +392,7 @@ footer {
 
   </div>
 
-  <div data-hash="#/terms-of-use">
+  <div data-hash="#/terms-of-use" class="terms-of-use">
     <h2>Terms of Use</h2>
     <p><strong>Effective Date:</strong> 2024-04-01</p>
 
@@ -390,7 +427,7 @@ footer {
     <p>The materials appearing on Q.S.T.A.R. Research's website could include technical, typographical, or photographic errors. Q.S.T.A.R. Research does not warrant that any of the materials on its website are accurate, complete, or current. Q.S.T.A.R. Research may make changes to the materials contained on its website at any time without notice. Q.S.T.A.R. Research does not, however, make any commitment to update the materials.</p>
   </div>
 
-  <div data-hash="#404">
+  <div data-hash="#404" class="404">
       <h1>Page Not Found</h1>
     <p>
       This site is under heavy construction. Some pages are not fully designed yet. Please come back shortly to see if the content you're looking for has been added.
@@ -401,21 +438,31 @@ footer {
 
 <footer>
 
-  <nav>
-    <a href="https://twitter.com/gklain" target="_blank">Twitter</a>
-    <a href="https://ch.linkedin.com/company/gianklain" target="_blank">LinkedIn</a>
-    <a href="info@qstar-research.com" target="_blank">Email</a>
+  <div class="navs">
+    <nav>
+      <a href="https://twitter.com/gklain" target="_blank">Twitter</a>
+      <a href="https://ch.linkedin.com/company/gianklain" target="_blank">LinkedIn</a>
+      <a href="info@qstar-research.com" target="_blank">Email</a>
+    </nav>
     <div class="spacer">&nbsp;</div>
-    <a href="#/privacy">Privacy</a>
-    <a href="#/terms-of-use">Terms of Use</a>
-    <div>©QSTAR research 2024</div>
-  </nav>
+    <nav>
+      <a href="#/privacy">Privacy</a>
+      <a href="#/terms-of-use">Terms of Use</a>
+      <div>©QSTAR 2024</div>
+    </nav>
+  </div>
 
 </footer>
 
 <script type="text/javascript">
 
 (async () => fetch('https://figur.li/l/?tag=loaded'))();
+
+const toggle = document.querySelector('header .toggle');
+const header = document.querySelector('header');
+toggle.addEventListener('click', () => {
+  header.classList.toggle('shown');
+});
 
 const els = [...document.querySelectorAll('*')].filter(e => e.dataset.hash);
 const fouroufour = document.querySelector('[data-hash="#404"]');
@@ -428,6 +475,7 @@ function hashed() {
     notfound &= !found;
   }
   fouroufour.style.display = notfound ? null : 'none';
+  header.classList.remove('shown');
 }
 
 window.addEventListener('hashchange', hashed);
