@@ -32,7 +32,7 @@
   font-family: "Lora", serif;
 }
 
-body, html {
+html {
   margin: 0;
   background-color: var(--bg);
   color: var(--fg);
@@ -46,11 +46,14 @@ a, a:visited {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds shadow to images for depth */
 }
 
-.container {
+article {
   padding: 0 0.5em;
   max-width: var(--max-width);
   margin: auto;
   overflow: hidden;
+}
+
+article.home {
 }
 
 .header-image {
@@ -322,9 +325,9 @@ footer {
   </nav>
 </header>
 
-<div class="container">
+<!-- <div class="container"> -->
 
-  <div data-hash="#/" class="home">
+  <article data-hash="#/" class="home">
 
     <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
     <h1>Q.S.T.A.R. Research: Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today</h1>
@@ -343,9 +346,11 @@ footer {
         <h2>Our Commitment as a Privately Funded NGO:</h2>
         <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
     </section>
-  </div>
+  </article>
 
-  <div data-hash="#/research" class="research">
+<div class="research">
+
+  <article data-hash="#/research" class="research">
 
     <div class="title_with">
       <h2>Supercharging AI with quantum computing</h2>
@@ -380,9 +385,9 @@ footer {
       </li>
     </ul>
 
-  </div>
+  </article>
 
-  <div data-hash="#/research/attention_qc" class="research/attention_qc">
+  <article data-hash="#/research/attention_qc" class="research/attention_qc">
 
     <h1>Quantum-Enhanced LLM Attention Mechanisms: Exploring Entanglement for Efficient Contextual Processing</h1>
 
@@ -414,9 +419,9 @@ footer {
     <h2>Conclusion</h2> 
     <p>We are exploring just the tip of the iceberg of what quantum computing can do for language models.  It's still early days, but the potential is undeniable. With continued research and breakthroughs on the quantum hardware front, we might just witness the dawn of a whole new generation of LLMs – more powerful, more efficient, and more capable than anything we've imagined  today.</p>
     
-  </div>
+  </article>
 
-  <div data-hash="#/research/miniaturization" class="research/miniaturization">
+  <article data-hash="#/research/miniaturization" class="research/miniaturization">
     <h1>Shattered Performance Barriers in Mobile Quantum Computing</h1>
 
     <p class="abstract">Q.S.T.A.R. Research announces a paradigm shift in quantum computing with a revolutionary mobile quantum processing unit (MQPU). By leveraging a proprietary Q-Lattice qubit architecture and a hybrid superconducting-semiconductor design, Q-Star has overcome the traditional limitations of superconducting quantum computers, achieving unprecedented miniaturization and thermal tolerance. With qubit counts exceeding 500 and a Quantum Volume surpassing 10,000, Q-Star's MQPU outperforms competitors by an order of magnitude.  Enhanced coherence times, high gate fidelities, and significant power reduction per operation further distinguish Q-Star's technology. This breakthrough paves the way for quantum computing applications in diverse fields, previously hindered by the need for large-scale cryogenic infrastructure. Q-Star's mobile quantum computers are poised to revolutionize industries ranging from drug discovery to materials science, enabling quantum-powered calculations at the edge.</p>
@@ -504,9 +509,9 @@ footer {
     
     <p><strong>The future of quantum computing isn't just powerful, and it isn't just portable. With Q.S.T.A.R. Research, it's both.</strong></p>
     
-  </div>
+  </article>
 
-  <div data-hash="#/research/energy" class="research/energy">
+  <article data-hash="#/research/energy" class="research/energy">
 
     <h1>The Quantum Energy Paradox: Our Surprising Path to Scalability</h1>
 
@@ -584,9 +589,10 @@ footer {
 
     <p>Q-Star Research's unconventional approach to energy consumption in quantum computing has yielded groundbreaking results. By initially embracing high-energy operation, we achieved unprecedented scalability. Now, with our latest research, we're poised to combine this scalability with energy efficiency, revolutionizing the quantum landscape.</p>
   
-  </div>
+  </article>
+</div>
 
-  <div data-hash="#/company" class="company">
+  <article data-hash="#/company" class="company">
 
     <section class="advisory-board">
         <h2>Q.S.T.A.R. Research Advisory Board</h2>
@@ -657,9 +663,10 @@ footer {
             </li>
         </ul>
     </section>
-  </div>
+  </article>
 
-  <div data-hash="#/privacy" class="privacy">
+<div class="etc">
+  <article data-hash="#/privacy" class="privacy">
 
     <h2>Privacy Statement</h2>
     <p><strong>Effective Date:</strong> 2024-04-01</p>
@@ -709,9 +716,9 @@ footer {
     <h3>Contact Us</h3>
     <p>If you have any questions about this Privacy Statement
 
-  </div>
+  </article>
 
-  <div data-hash="#/terms-of-use" class="terms-of-use">
+  <article data-hash="#/terms-of-use" class="terms-of-use">
     <h2>Terms of Use</h2>
     <p><strong>Effective Date:</strong> 2024-04-01</p>
 
@@ -744,16 +751,16 @@ footer {
 
     <h3>6. Revisions and Errata</h3>
     <p>The materials appearing on Q.S.T.A.R. Research's website could include technical, typographical, or photographic errors. Q.S.T.A.R. Research does not warrant that any of the materials on its website are accurate, complete, or current. Q.S.T.A.R. Research may make changes to the materials contained on its website at any time without notice. Q.S.T.A.R. Research does not, however, make any commitment to update the materials.</p>
-  </div>
+  </article>
 
-  <div data-hash="#404" class="404">
+  <article data-hash="#404" class="404">
       <h1>Page Not Found</h1>
     <p>
       This site is under heavy construction. Some pages are not fully designed yet. Please come back shortly to see if the content you're looking for has been added.
     </p>
-  </div>
+  </article>
 
-</div>
+<!-- </div> -->
 
 <footer>
 
@@ -770,6 +777,7 @@ footer {
       <div>©QSTAR 2024</div>
     </nav>
   </div>
+</div>
 
 </footer>
 
@@ -795,6 +803,7 @@ function hashed() {
   }
   fouroufour.style.display = notfound ? null : 'none';
   header.classList.remove('shown');
+  window.scrollTo(0, 0);
 }
 
 window.addEventListener('hashchange', hashed);
