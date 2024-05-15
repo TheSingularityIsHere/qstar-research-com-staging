@@ -44,6 +44,17 @@ a, a:visited {
   color: var(--fg);
 }
 
+#loadscreen {
+  background: black;
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><path fill="none" stroke="%23FF156D" stroke-width="15" stroke-linecap="round" stroke-dasharray="300 385" stroke-dashoffset="0" d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"><animate attributeName="stroke-dashoffset" calcMode="spline" dur="2" values="685;-685" keySplines="0 0 1 1" repeatCount="indefinite"></animate></path></svg>');
+  background-size: 3em 1.5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  z-index: 3;
+  left: 0; top: 0; right: 0; bottom: 0;
+}
+
 .header-image, .wide-image, .member-image {
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds shadow to images for depth */
 }
@@ -337,6 +348,8 @@ footer {
 }
 </style>
 
+<div id="loadscreen"></div>
+
 <header>
   <a href="#/" aria-label="Home">QSTAR</a>
   <div class="spacer"></div>
@@ -359,7 +372,7 @@ footer {
 
   <style>
 
-    .background-image {
+    #background-image {
       /* width: 100vw;
       height: 100vh; */
       top:0; left:0; right:0; bottom:0;
@@ -409,12 +422,16 @@ footer {
       h1.fancy {
         margin-top: 30vh;
         text-align: center;
-        animation: fromLeft 1s ease-out forwards;
+        &.animating {
+          animation: fromLeft 1s ease-out forwards;
+        }
       }
       h2.fancy {
         margin-top: 10vh;
         text-align: center;
-        animation: fromRight 1s ease-out forwards;
+        &.animating {
+          animation: fromRight 1s ease-out forwards;
+        }
       }
       .with-bg {
         background: var(--bg);
@@ -435,11 +452,11 @@ footer {
     
   </style>
 
-  <div class="background-image"></div>
+  <div id="background-image"></div>
 
   <div class="screen">
-    <h1 class="fancy">QSTAR Research</h1>
-    <h2 class="fancy">Harnessing Hyper-Speed Computation<br>to Safeguard Tomorrow's AI Today</h2>
+    <h1 class="fancy animatable">QSTAR Research</h1>
+    <h2 class="fancy animatable">Harnessing Hyper-Speed Computation<br>to Safeguard Tomorrow's AI Today</h2>
   </div>
 
   <div class="with-bg">
@@ -497,23 +514,21 @@ footer {
     <ul class="gallery3">
       <li>
         <a href="#/research/attention_qc">
-          <img src="attention_qc.jpg">
+          <img data-src="attention_qc.jpg">
           <h4>Quantum-enhanced attention</h4>
           <p>We discovered how to make use of quantum entanglement for effective attention computation accelerating LLMs.</p>
         </a>
       </li>
       <li>
         <a href="#/research/miniaturization">
-          <!-- <img src="shattering.jpg"> -->
-          <video autoplay loop muted><source src="shattering.mp4"></video>
+          <video autoplay loop muted><source data-src="shattering.mp4"></video>
           <h4>Miniaturization</h4>
           <p>We revolutionize quantum computing with a mobile quantum processing unit (MQPU) enabled by a proprietary Q-Lattice architecture and hybrid design.</p>
         </a>
       </li>
       <li>
         <a href="#/research/energy">
-          <!-- <img src="shattering.jpg"> -->
-          <video autoplay loop muted><source src="energy_scalability.mp4"></video>
+          <video autoplay loop muted><source data-src="energy_scalability.mp4"></video>
           <h4>Energy Scalability</h4>
           <p>Increasing energy throughput by orders of magnitude increased coherence and reduced error rates drastically, but new surprising findings broke the correlation.</p>
         </a>
@@ -628,7 +643,7 @@ footer {
     <li><strong>Integrated Cryo-CMOS:</strong>  We're collaborating with leaders in cryogenic electronics to further integrate CMOS-based control systems  – streamlining infrastructure and boosting efficiency.</li>
     </ul>
 
-    <img class="fig" src="qlattice_performance.png">
+    <img class="fig" data-src="qlattice_performance.png">
     
     <h2>Performance That Changes the Game</h2>
     
@@ -662,7 +677,7 @@ footer {
 
     <p>Our initial research revealed a startling correlation: higher energy input correlated with drastically lower error rates and significantly improved entanglement fidelity. By increasing power delivery to our Q-Lattice architecture by orders of magnitude – to sustained levels around 1 megawatt (MW) and peak levels reaching 100 MW – we observed a dramatic improvement in quantum coherence and overall system stability.</p>
 
-    <img class="fig" src="energy_coherence.png">
+    <img class="fig" data-src="energy_coherence.png">
   
     <h2>Unveiling the Quantum Energy Paradox</h2>
 
@@ -738,7 +753,7 @@ footer {
     <div class="photo_event">
 
       <div>
-        <img src="Experiment 01_Nicola_Forster_Sanija_Ameti_Simon_Jaquemet_James_Glattfelder_GianKlain_Qstar.jpg">
+        <img data-src="Experiment 01_Nicola_Forster_Sanija_Ameti_Simon_Jaquemet_James_Glattfelder_GianKlain_Qstar.jpg">
       </div>
 
       <div>
@@ -755,7 +770,7 @@ footer {
     <div class="photo_event rtl">
 
       <div>
-        <img src="Experiment_02_Gerhard_Andrey_ManuelHendry_MinLiMarti_Anna_Zeiter_Firesidechat_.jpg">
+        <img data-src="Experiment_02_Gerhard_Andrey_ManuelHendry_MinLiMarti_Anna_Zeiter_Firesidechat_.jpg">
       </div>
 
       <div>
@@ -811,15 +826,15 @@ footer {
     
     <section class="focus">
       <h2>QSTAR Headquarters</h2>
-      <img src="qstar_hq.jpg" alt="QSTAR Research Headquarters" class="header-image">
+      <img data-src="qstar_hq.jpg" alt="QSTAR Research Headquarters" class="header-image">
         <p>Located at the iconic Kraftwerk in Zürich, QSTAR Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
-        <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
+        <img data-src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
     </section>
 
     <section class="advisory-board">
         <h2>QSTAR Research Advisory Board</h2>
         <div class="board-member">
-            <img src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
+            <img data-src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
             <div>
               <h3>Dr. Helena Morgenstern</h3>
               <p>
@@ -831,7 +846,7 @@ footer {
             </div>
         </div>
         <div class="board-member">
-            <img src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
+            <img data-src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
             <div>
               <h3>Prof. Eduardo Rivera</h3>
               <p>
@@ -843,7 +858,7 @@ footer {
             </div>
         </div>
         <div class="board-member">
-            <img src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
+            <img data-src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
             <div>
               <h3>Dr. Lina Zhou</h3>
               <p>
@@ -855,7 +870,7 @@ footer {
             </div>
         </div>
         <div class="board-member">
-            <img src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
+            <img data-src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
             <div>
               <h3>Dr. Rajesh Kumar</h3>
               <p>
@@ -1046,6 +1061,19 @@ function hashed() {
     const found = el.dataset.hash === location.hash;
     el.style.display = found ? null : 'none';
     notfound &= !found;
+    if (found) {
+      for (const source of el.querySelectorAll('[data-src]')) {
+        console.log('ata-src', el, source);
+        source.src = source.dataset.src;
+        if (source.parentNode.tagName === 'VIDEO') {
+          source.parentNode.append(source.cloneNode());
+          source.remove();
+        }
+      }
+      for (const animatable of el.querySelectorAll('.animatable')) {
+        animatable.classList.add('animating');
+      }
+    }
   }
   fouroufour.style.display = notfound ? null : 'none';
   header.classList.remove('shown');
@@ -1055,7 +1083,24 @@ function hashed() {
 
 window.addEventListener('hashchange', hashed);
 
-location.hash || (location.hash = '#/');
-hashed();
+function loading(imgurls, cb) {
+  let n = imgurls.length;
+  if (!n) return cb();
+  for (const imgurl of imgurls) {
+    const img = new Image();
+    img.onload = img.onerror = () => --n || cb();
+    img.src = imgurl;
+  }
+}
+const srcs = [];
+if (location.hash === '#/') {
+  srcs.push('zoltan.jpg');
+}
+const loadscreen = document.querySelector('#loadscreen');
+loading(srcs, () => {
+  loadscreen.style.display = 'none';
+  location.hash || (location.hash = '#/');
+  hashed();
+});
 
 </script>
