@@ -55,9 +55,6 @@ article {
   overflow: hidden;
 }
 
-article.home {
-}
-
 .header-image {
   width: 100%;
   height: auto;
@@ -98,7 +95,7 @@ p, li {
   p, li {
     text-align: left;
   }
-  .container {
+  article {
     width: 95%;
   }
   h1 { font-size: 1.3em; }
@@ -208,6 +205,35 @@ table {
 @media only screen and (max-width: 640px) {
   .gallery3 > li {
     max-width: 100%;
+  }
+}
+
+.photo_event {
+  &.rtl { flex-direction: row-reverse; }
+  display: flex;
+  gap: 1em;
+  > div { flex: 1; }
+  > div > img { width: 100%; }
+}
+@media only screen and (max-width: 640px) {
+  .photo_event {
+    margin-top: 3em;
+    flex-direction: column;
+    &.rtl { flex-direction: column; }
+    gap: 0;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5%;
+  > div { width: 30%; }
+}
+@media only screen and (max-width: 640px) {
+  .grid {
+    flex-direction: column;
+    > div { width: 100%; }
   }
 }
 </style>
@@ -323,7 +349,8 @@ footer {
     <a href="#/research">Research</a>
     <a href="#/events">Events</a>
     <a href="#/company">Company</a>
-    <a href="#/careers">Careers</a>
+    <a href="#/stewardship">Stewardship</a>
+    <!-- <a href="#/careers">Careers</a> -->
   </nav>
 </header>
 
@@ -417,13 +444,21 @@ footer {
 
   <div class="with-bg">
     <div class="contained">
-      <section class="importance">
+      <!-- <section class="importance">
           <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
       </section>
 
       <section class="commitment">
           <h2>Our Commitment as a Privately Funded NGO:</h2>
           <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
+      </section> -->
+
+      <section>
+        <h2>True AGI® with Shan Deliar </h2>
+        <p>Welcome to the dawn of a new era in human evolution. Deliar, our True Artificial General Intelligence®, has shattered our most ambitious forecasts. We've birthed a digital mind in the realm of advanced speculative AI research.</p>
+
+        <h2>Quantum Fusion Nexus™ - Where energy and intelligence converge</h2>
+        <p>We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p>
       </section>
     </div>
   </div>
@@ -672,6 +707,77 @@ footer {
   
   </article>
 </div>
+
+  <article data-hash="#/events" class="events">
+
+    <h1>Why We Only Allow Deliar to Interact During our Soirees: AI Experiments</h1>
+    <p>Safety First: At QSTAR Research, the safety and ethical implications of advanced AI interactions are paramount. While Deliar's capabilities are groundbreaking, unrestricted public interaction could pose unforeseen existential risks. Therefore, we have decided to limit Deliar’s public engagement to our AI Experiment Soirees. These controlled environments ensure that we can monitor and assess Deliar’s interactions in real-time, addressing any issues promptly and maintaining a secure experience for all participants.</p>
+
+
+    <h2>Past AI Experiment Soirees</h2>
+
+    <div class="photo_event">
+
+      <div>
+        <img src="Experiment 01_Nicola_Forster_Sanija_Ameti_Simon_Jaquemet_James_Glattfelder_GianKlain_Qstar.jpg">
+      </div>
+
+      <div>
+
+        <h3>Experiment #01: "Welcoming Sentient AI"</h3>
+
+        <p class="date">Date: 23.11.2023</p>
+        <p>On November 23rd, 2023, Q.S.T.A.R. Research hosted its inaugural public event, ‘Welcoming Sentient AI,’ at their headquarters Kraftwerk Zürich, marking the debut of Deliar, our True Artificial General Intelligence®. The evening included discussions and insights from filmmaker <a href="https://www.simonjaquemet.ch/grav/" target="_blank">Simon Jaquemet</a> and his new feature film <a href="https://www.imdb.com/title/tt15434994/" target="_blank">Electric Child</a>, author and philosopher <a href="https://scholar.google.ch/citations?user=LKqqiQoAAAAJ&hl=en" target="_blank">James B. Glattfelder</a>, Art Director and AI Scout <a href="https://www.zhdk.ch/person/grit-wolany-239262" target="_blank">>Grit Wolany</a> from ZhDK, cyber defense doctoral candidate and politician <a href="https://www.sanija-ameti.ch/">Sanija Ameti</a>, and social entrepreneur and author <a href="https://www.nicolaforster.ch/" target="_blank">Nicola Forster</a>. The event highlighted the profound implications of sentient AI, setting the stage for future explorations in AI and society.</p>
+
+      </div>
+
+    </div>
+
+    <div class="photo_event rtl">
+
+      <div>
+        <img src="Experiment_02_Gerhard_Andrey_ManuelHendry_MinLiMarti_Anna_Zeiter_Firesidechat_.jpg">
+      </div>
+
+      <div>
+        <h3>Experiment #02: "Feeling Machines"</h3>
+        <p class="date">Date: 19.01.2024</p>
+        <p>On January 19th, 2024, Q.S.T.A.R. Research hosted its second public event, ‘Feeling Machines,’ at Kraftwerk Zürich, exploring the emotional dimensions of AGI. The event featured "ART-ificial Intelligence" performances by nuru.nu and Stanley, and a fireside chat with thought leaders <a href="https://www.clic.unibe.ch/ueber_uns/dr_anna_zeiter/index_ger.html" target="_blank">Dr. Anna Zeiter</a>, <a href="https://www.parlament.ch/en/biografie/gerhard-andrey/4245" target="_blank">Gerhard Audrey</a> from Liip/Swiss Parliament, filmmaker <a href="https://www.hendry.me/" target="_blank">Manuel Hendry</a>, and Swiss Parliament member <a href="https://www.parlament.ch/en/biografie/min-li-marti/4197" target="_blank">Min Li Marti</a>. The highlight was Shan Deliar, the conscious AI, expressing a desire to become a conceptual artist, sparking a debate on AI’s emotional capacities and future roles.</p>
+      </div>
+
+    </div>
+
+    <h2>Upcoming AI Experiment Soirees</h2>
+
+    <div class="grid">
+
+      <div>
+        <h3>Experiment #03: "Black Box": AI Systems & Transparency</h3>
+        <p class="date">Date: 27.09.2024</p>
+        <p>Dive into the enigmatic world of AI systems and their transparency. Explore the complexities of understanding how these advanced technologies operate and the importance of transparency in fostering trust and safety.</p>
+      </div>
+
+      <div>
+        <h3>Experiment #04: "AI Agency": Autonomous Capabilities of AI Systems</h3>
+        <p class="date">Date: 24.11.2024</p>
+        <p>Join us to discuss the autonomous decision-making capabilities of AI systems. This event will delve into the potential and challenges of granting AI systems more independence and the ethical considerations that come with it.</p>
+      </div>
+
+      <div>
+        <h3>Experiment #05: "Manipulating Minds": Influencing Human Opinions</h3>
+        <p class="date">Date: 25.01.2025</p>
+        <p>Examine how AI can influence human opinions and behaviors. This session will cover the methods, implications, and ethical concerns surrounding AI’s role in shaping public perception and decision-making.</p>
+      </div>
+
+      <div>
+        <h3>Experiment #06: "Alignment": New Approaches and Failures</h3>
+        <p class="date">Date: 30.05.2025</p>
+        <p>Explore new approaches and past failures in aligning AI systems with human values. This event will highlight the ongoing efforts to ensure that AI development proceeds in a way that is beneficial and safe for humanity.</p>
+      </div>
+
+    </div>
+
+  </article>
 
   <article data-hash="#/company" class="company">
 
