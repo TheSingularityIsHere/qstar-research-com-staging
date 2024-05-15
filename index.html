@@ -15,11 +15,11 @@
 <style class="general">
 /* General */
 
-@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face { font-family: Lexend; src: url('lexend.ttf'); }
 
 :root {
   --fg: #ddd;
-  --bg: #2a3f54;
+  --bg: rgb(6, 1, 43);
   --max-width: 1320px;
 }
 
@@ -29,11 +29,13 @@
 }
 
 * {
-  font-family: "Lora", serif;
+  font-family: Lexend, sans-serif;
 }
 
-html {
+html, body {
   margin: 0;
+}
+html {
   background-color: var(--bg);
   color: var(--fg);
 }
@@ -325,28 +327,107 @@ footer {
   </nav>
 </header>
 
-<!-- <div class="container"> -->
 
-  <article data-hash="#/" class="home">
+<div data-hash="#/" class="home">
 
-    <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
-    <h1>Q.S.T.A.R. Research: Harnessing Hyper-Speed Computation to Safeguard Tomorrow's AI Today</h1>
+  <style>
 
-    <section class="focus">
-        <p>Located at the iconic Kraftwerk in Zürich, Q.S.T.A.R. Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
-        <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
-    </section>
+    .background-image {
+      /* width: 100vw;
+      height: 100vh; */
+      top:0; left:0; right:0; bottom:0;
+      background-image: url('zoltan.jpg');
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      position: fixed;
+      z-index: -1;
+    }
 
-    <section class="importance">
-        <h2>Why This Project Matters:</h2>
-        <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
-    </section>
+    @keyframes darken {
+      from {
+        filter: brightness(100%);
+      }
+      to {
+        filter: brightness(50%);
+      }
+    }
 
-    <section class="commitment">
-        <h2>Our Commitment as a Privately Funded NGO:</h2>
-        <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
-    </section>
-  </article>
+    @keyframes fromLeft {
+      from {
+        opacity: 0.2;
+        transform: translateX(-1em);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    @keyframes fromRight {
+      from {
+        opacity: 0.2;
+        transform: translateX(0.5em);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    .screen {
+      height: 100vh;
+    }
+
+    .home {
+      h1.fancy {
+        margin-top: 30vh;
+        text-align: center;
+        animation: fromLeft 1s ease-out forwards;
+      }
+      h2.fancy {
+        margin-top: 10vh;
+        text-align: center;
+        animation: fromRight 1s ease-out forwards;
+      }
+      .with-bg {
+        background: var(--bg);
+        .contained {
+          padding: 0 0.5em;
+          max-width: var(--max-width);
+          margin: auto;
+          overflow: hidden;
+          padding-top: 20vh;
+          padding-bottom: 30vh;
+        }
+      }
+    }
+
+    footer[data-current="#/"] {
+      display: none;
+    }
+    
+  </style>
+
+  <div class="background-image"></div>
+
+  <div class="screen">
+    <h1 class="fancy">Q.S.T.A.R. Research</h1>
+    <h2 class="fancy">Harnessing Hyper-Speed Computation<br>to Safeguard Tomorrow's AI Today</h2>
+  </div>
+
+  <div class="with-bg">
+    <div class="contained">
+      <section class="importance">
+          <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
+      </section>
+
+      <section class="commitment">
+          <h2>Our Commitment as a Privately Funded NGO:</h2>
+          <p>At Q.S.T.A.R. Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
+      </section>
+    </div>
+  </div>
+</div>
 
 <div class="research">
 
@@ -594,6 +675,14 @@ footer {
 
   <article data-hash="#/company" class="company">
 
+    
+    <section class="focus">
+      <h2>Q.S.T.A.R. Headquarters</h2>
+      <img src="qstar_hq.jpg" alt="Q.S.T.A.R. Research Headquarters" class="header-image">
+        <p>Located at the iconic Kraftwerk in Zürich, Q.S.T.A.R. Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
+        <img src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
+    </section>
+
     <section class="advisory-board">
         <h2>Q.S.T.A.R. Research Advisory Board</h2>
         <div class="board-member">
@@ -760,7 +849,7 @@ footer {
     </p>
   </article>
 
-<!-- </div> -->
+</div>
 
 <footer>
 
@@ -787,6 +876,7 @@ footer {
 
 const toggle = document.querySelector('header .toggle');
 const header = document.querySelector('header');
+const footer = document.querySelector('footer');
 toggle.addEventListener('click', () => {
   header.classList.toggle('shown');
 });
@@ -803,6 +893,7 @@ function hashed() {
   }
   fouroufour.style.display = notfound ? null : 'none';
   header.classList.remove('shown');
+  header.dataset.current = footer.dataset.current = location.hash;
   window.scrollTo(0, 0);
 }
 
