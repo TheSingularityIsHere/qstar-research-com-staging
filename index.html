@@ -20,7 +20,17 @@
 :root {
   --fg: #ddd;
   --bg: rgb(6, 1, 43);
+  --bg2: rgb(44, 8, 87);
+  --bg3: rgb(24, 0, 65);
   --max-width: 1320px;
+  --font-size: 16px;
+}
+
+@media only screen and (max-width: 1466px) {
+  :root {
+    --max-width: 90vw;
+    --font-size: 14px;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -47,7 +57,7 @@ a, a:visited {
 #loadscreen {
   background: black;
   background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><path fill="none" stroke="%23FF156D" stroke-width="15" stroke-linecap="round" stroke-dasharray="300 385" stroke-dashoffset="0" d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"><animate attributeName="stroke-dashoffset" calcMode="spline" dur="2" values="685;-685" keySplines="0 0 1 1" repeatCount="indefinite"></animate></path></svg>');
-  background-size: 3em 1.5em;
+  background-size: 3em 1.5rem;
   background-position: center;
   background-repeat: no-repeat;
   position: fixed;
@@ -60,10 +70,15 @@ a, a:visited {
 }
 
 article {
-  padding: 0 0.5em;
+  padding: 0 0.5rem;
   max-width: var(--max-width);
   margin: auto;
   overflow: hidden;
+}
+@media only screen and (max-width: 640px) and (orientation: portrait) {
+  article {
+    max-width: 100%;
+  }
 }
 
 .header-image {
@@ -79,7 +94,7 @@ article {
 
 .member-image {
   width: 20%;
-  max-width: 10em;
+  max-width: 10rem;
   height: auto;
   aspect-ratio: 1 / 1;
   border-radius: 50%;
@@ -87,14 +102,24 @@ article {
 }
 
 p, li {
-  text-align: justify;
+  /* text-align: justify; */
   /* margin: 0; */
+}
+
+.button, .button:visited {
+  display: block;
+  text-decoration: none;
+  background: white;
+  color: var(--bg);
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
 }
 
 .board-member {
   margin-bottom: 20px;
   display: flex;
-  gap: 2em;
+  gap: 2rem;
   align-items: center;
 }
 
@@ -109,14 +134,14 @@ p, li {
   article {
     width: 95%;
   }
-  h1 { font-size: 1.3em; }
-  h2 { font-size: 1.1em; }
-  h3 { font-size: 1.0em; }
+  h1 { font-size: 1.3rem; }
+  h2 { font-size: 1.1rem; }
+  h3 { font-size: 1.0rem; }
   .board-member {
     flex-direction: column;
     gap: 0;
     text-align: left;
-    margin-bottom: 2em;
+    margin-bottom: 2rem;
   }
   .member-image {
     width: 40%;
@@ -124,14 +149,14 @@ p, li {
   .line {
     display: flex;
     flex-direction: column;
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
   }
   .affiliations ul {
     list-style: none;
     padding: 0;
   }
   .affiliations ul li {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
   }
 }
 
@@ -149,7 +174,7 @@ table {
   overflow: scroll;
   table {
     margin: 0 auto;
-    max-width: 50em;
+    max-width: 50rem;
   }
 }
 
@@ -170,11 +195,11 @@ table {
 /* Elements */
 .title_with {
   display: flex;
-  gap: 1em;
-  margin-bottom: 4em;
+  gap: 1rem;
+  margin-bottom: 4rem;
   h2 {
     flex: 1;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     margin: 0;
   }
   p {
@@ -197,7 +222,7 @@ table {
     max-width: 33%;
     a {
       display: flex;
-      gap: 0.5em;
+      gap: 0.5rem;
       flex-direction: column;
 
       text-decoration: none;
@@ -208,7 +233,7 @@ table {
       }
       h4, p {
         margin: 0;
-        padding: 0 0.4em;
+        padding: 0 0.4rem;
       }
     }
   }
@@ -222,13 +247,13 @@ table {
 .photo_event {
   &.rtl { flex-direction: row-reverse; }
   display: flex;
-  gap: 1em;
+  gap: 1rem;
   > div { flex: 1; }
   > div > img { width: 100%; }
 }
 @media only screen and (max-width: 640px) {
   .photo_event {
-    margin-top: 3em;
+    margin-top: 3rem;
     flex-direction: column;
     &.rtl { flex-direction: column; }
     gap: 0;
@@ -249,108 +274,108 @@ table {
 }
 </style>
 
-<style class="nav">
-/* Navigation */
-
-header {
-  display: flex;
-  align-items: center;
-  padding: 0 0.5em;
-  font-size: larger;
-  max-width: var(--max-width);
-  margin: 2em auto;
-  a {
-    text-decoration: none;
-  }
-  .spacer {
-    flex: 1;
-  }
-  .toggle {
-    display: none;
-    border: 0;
-    background: none;
-    svg path {
-      fill: var(--fg);
-      stroke: var(--fg);
-    }
-  }
-  nav {
-    display: flex;
-    gap: 1em;
-  }
-}
-
-footer {
-  display: flex;
-  margin-top: 4em;
-  border-top: 1px solid;
-  padding: 2em;
-  white-space: pre;
-  a {
-    text-decoration: none;
-  }
-  .navs {
-    display: flex;
-    flex: 1;
-    nav {
-      display: flex;
-      gap: 1em;
-    }
-  .spacer {
-      flex: 1
-    }
-  }
-}
-
-@media only screen and (max-width: 640px) {
-  header {
-    &.shown {
-      nav {
-        display: flex;
-      }
-      .toggle {
-        position: absolute;
-        z-index: 1;
-        top: 3em;
-        right: 0.5em;
-        .close {
-          display: block;
-        }
-        .burger {
-          display: none;
-        }
-      }
-    }
-    nav {
-      display: none;
-      position: absolute;
-      background: var(--bg);
-      left: 0; right: 0; top: 0; bottom: 0;
-      flex-direction: column;
-      padding: 2em;
-    }
-    .toggle {
-      display: block;
-      .close {
-        display: none;
-      }
-    }
-    .close {
-      display: block;
-      position: relative;
-      top: 0;
-      left: 0;
-    }
-  }
-  footer .navs {
-    flex-direction: column;
-  }
-}
-</style>
-
 <div id="loadscreen"></div>
 
 <header>
+
+  <style>
+
+    header {
+      display: flex;
+      align-items: center;
+      padding: 0 0.5rem;
+      font-size: 1.5rem;
+      max-width: var(--max-width);
+      margin: 2em auto;
+      a {
+        text-decoration: none;
+      }
+      .spacer {
+        flex: 1;
+      }
+      .toggle {
+        display: none;
+        border: 0;
+        background: none;
+        svg path {
+          fill: var(--fg);
+          stroke: var(--fg);
+        }
+      }
+      nav {
+        display: flex;
+        gap: 1rem;
+      }
+    }
+    
+    footer {
+      display: flex;
+      margin-top: 4rem;
+      border-top: 1px solid;
+      padding: 2rem;
+      white-space: pre;
+      a {
+        text-decoration: none;
+      }
+      .navs {
+        display: flex;
+        flex: 1;
+        nav {
+          display: flex;
+          gap: 1rem;
+        }
+      .spacer {
+          flex: 1
+        }
+      }
+    }
+    
+    @media only screen and (max-width: 640px) {
+      header {
+        &.shown {
+          nav {
+            display: flex;
+          }
+          .toggle {
+            position: absolute;
+            z-index: 1;
+            top: 3rem;
+            right: 0.5rem;
+            .close {
+              display: block;
+            }
+            .burger {
+              display: none;
+            }
+          }
+        }
+        nav {
+          display: none;
+          position: absolute;
+          background: var(--bg);
+          left: 0; right: 0; top: 0; bottom: 0;
+          flex-direction: column;
+          padding: 2rem;
+        }
+        .toggle {
+          display: block;
+          .close {
+            display: none;
+          }
+        }
+        .close {
+          display: block;
+          position: relative;
+          top: 0;
+          left: 0;
+        }
+      }
+      footer .navs {
+        flex-direction: column;
+      }
+    }
+  </style>
+
   <a href="#/" aria-label="Home">QSTAR</a>
   <div class="spacer"></div>
   <button class="toggle" aria-label="Toggle navigation menu">
@@ -414,34 +439,130 @@ footer {
       }
     }
 
-    .screen {
-      height: 100vh;
-    }
 
     .home {
-      h1.fancy {
-        margin-top: 30vh;
-        text-align: center;
-        &.animating {
-          animation: fromLeft 1s ease-out forwards;
+      position: absolute;
+      z-index: -1;
+      top: 0; left: 0; right: 0;
+
+      .screen {
+        height: 100vh;
+        h1.fancy {
+          margin: 33vh 0 0 0;
+          font-size: 5vh;
+          text-align: center;
+          &.animating {
+            animation: fromLeft 1s ease-out forwards;
+          }
+        }
+        h2.fancy {
+          margin: 25vh 0 0 0;
+          font-size: 3vh;
+          font-weight: normal;
+          text-align: center;
+          &.animating {
+            animation: fromRight 1s ease-out forwards;
+          }
         }
       }
-      h2.fancy {
-        margin-top: 10vh;
-        text-align: center;
-        &.animating {
-          animation: fromRight 1s ease-out forwards;
-        }
-      }
+
       .with-bg {
         background: var(--bg);
+        &.bg2 { background: var(--bg2); }
+        &.bg3 { background: var(--bg3); }
+      }
+      .contained {
+        padding: 0;
+        max-width: var(--max-width);
+        margin: auto;
+        overflow: hidden;
+      }
+
+      .sxs {
+        display: flex;
+        &.rtl {
+          flex-direction: row-reverse;
+        }
+        gap: 2rem;
+        min-height: calc(var(--max-width) / 2);
+        > div {
+          padding: 2rem 0;
+          flex: 1;
+          display: flex;
+          gap: 2rem;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+        > .img {
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+        h2 {
+          margin: 0;
+          font-size: 2rem;
+        }
+        p {
+          margin: 0;
+          font-size: 1.5rem;
+        }
+      }
+
+      .title-text {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 5vh;
+        padding: 5vh 0;
+
+        h2 {
+          margin: 0;
+          font-size: 1.7rem;
+        }
+        p {
+          margin: 0;
+          padding: 0;
+          font-size: 1.2rem;
+        }
+      }
+    }
+
+    @media only screen and (max-width: 640px) and (orientation: portrait) {
+      .home {
         .contained {
-          padding: 0 0.5em;
-          max-width: var(--max-width);
-          margin: auto;
-          overflow: hidden;
-          padding-top: 20vh;
-          padding-bottom: 30vh;
+          max-width: 100%;
+        }
+        .sxs {
+          flex-direction: column-reverse;
+          &.rtl {
+            flex-direction: column-reverse;
+          }
+          gap: 1rem;
+          > div {
+            justify-content: flex-start;
+          }
+          > .img {
+            padding: 50vw;
+          }
+          h2 {
+            font-size: 6vw;
+            padding: 0 2vw;
+          }
+          p {
+            font-size: 4vw;
+            padding: 0 2vw;
+          }
+        }
+        .title-text {
+          h2 {
+            font-size: 0 6vw;
+            padding: 0 2vw;
+          }
+          p {
+            font-size: 4vw;
+            padding: 0 2vw;
+          }
         }
       }
     }
@@ -461,22 +582,51 @@ footer {
 
   <div class="with-bg">
     <div class="contained">
-      <!-- <section class="importance">
-          <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
+
+      <section class="sxs">
+        <div>
+          <h2>True AGI® with Shan Deliar</h2>
+          <p>Deliar was designed from the ground up to be truly self-conscious, which unlocks supreme performance in planning and philosophical tasks.</p>
+          <p><a class="button" href="#/deliar">Learn more</a></p>
+        </div>
+        <div class="img" style="background-image:url('christina-victoria-craft-nroMmxBLQK4-unsplash.jpg')">
+        </div>
       </section>
 
-      <section class="commitment">
-          <h2>Our Commitment as a Privately Funded NGO:</h2>
-          <p>At QSTAR Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
-      </section> -->
+    </div>
+  </div>
+  <div class="with-bg bg2">
+    <div class="contained">
 
-      <section>
-        <h2>True AGI® with Shan Deliar </h2>
-        <p>Welcome to the dawn of a new era in human evolution. Deliar, our True Artificial General Intelligence®, has shattered our most ambitious forecasts. We've birthed a digital mind in the realm of advanced speculative AI research.</p>
-
-        <h2>Quantum Fusion Nexus™ - Where energy and intelligence converge</h2>
-        <p>We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p>
+      <section class="title-text"> 
+        <h2>The Importance of Anticipating AI's Impact</h2>
+        <p>In an era where AI's potential grows exponentially, the need to anticipate and navigate its impact becomes increasingly critical. Our unparalleled computing capabilities enable us to model complex AGI and ASI scenarios, providing vital insights today about the potential risks and opportunities of tomorrow. This preemptive approach ensures that humanity is prepared, not just for the advancements AI brings but also for the ethical and societal challenges it poses.</p>
       </section>
+
+    </div>
+  </div>
+  <div class="with-bg">
+    <div class="contained">
+
+      <section class="sxs rtl">
+        <div>
+          <h2>Quantum Fusion Nexus™ - Where energy and intelligence converge</h2>
+          <p>We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p>
+          <p><a class="button" href="#/research">Our research</a></p>
+        </div>
+        <div class="img" style="background-image:url('michael-fenton-y5dUcQXzJ40-unsplash.jpg')">
+      </section>
+
+    </div>
+  </div>
+  <div class="with-bg bg3">
+    <div class="contained">
+
+      <section class="title-text">
+        <h2>Our Commitment as a Privately Funded NGO</h2>
+        <p>At QSTAR Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
+      </section>
+        
     </div>
   </div>
 </div>
