@@ -15,7 +15,6 @@
 </head>
 
 <style class="general">
-/* General */
 
 @font-face { font-family: Lexend; src: url('lexend.ttf'); }
 
@@ -56,19 +55,8 @@ a, a:visited {
   color: var(--fg);
 }
 
-/* #loadscreen {
-  background: black;
-  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150"><path fill="none" stroke="%23FF156D" stroke-width="15" stroke-linecap="round" stroke-dasharray="300 385" stroke-dashoffset="0" d="M275 75c0 31-27 50-50 50-58 0-92-100-150-100-28 0-50 22-50 50s23 50 50 50c58 0 92-100 150-100 24 0 50 19 50 50Z"><animate attributeName="stroke-dashoffset" calcMode="spline" dur="2" values="685;-685" keySplines="0 0 1 1" repeatCount="indefinite"></animate></path></svg>');
-  background-size: 3em 1.5rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: fixed;
-  z-index: 3;
-  left: 0; top: 0; right: 0; bottom: 0;
-} */
-
 .header-image, .wide-image, .member-image {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2); /* Adds shadow to images for depth */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 article {
@@ -101,11 +89,6 @@ article {
   aspect-ratio: 1 / 1;
   border-radius: 50%;
   display: block;
-}
-
-p, li {
-  /* text-align: justify; */
-  /* margin: 0; */
 }
 
 .button, .button:visited {
@@ -192,61 +175,6 @@ table {
 @media only screen and (min-width: 641px) and (max-width: 1024px) {
 }
 </style>
-
-<style class="elements">
-/* Elements */
-.title_with {
-  display: flex;
-  gap: 1rem;
-  margin-bottom: 4rem;
-  h2 {
-    flex: 1;
-    font-size: 2.5rem;
-    margin: 0;
-  }
-  p {
-    flex: 1;
-    margin: 0;
-  }
-}
-@media only screen and (max-width: 640px) {
-  .title_with {
-    flex-direction: column;
-  }
-}
-
-
-.photo_event {
-  &.rtl { flex-direction: row-reverse; }
-  display: flex;
-  gap: 1rem;
-  > div { flex: 1; }
-  > div > img { width: 100%; }
-}
-@media only screen and (max-width: 640px) {
-  .photo_event {
-    margin-top: 3rem;
-    flex-direction: column;
-    &.rtl { flex-direction: column; }
-    gap: 0;
-  }
-}
-
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5%;
-  > div { width: 30%; }
-}
-@media only screen and (max-width: 640px) {
-  .grid {
-    flex-direction: column;
-    > div { width: 100%; }
-  }
-}
-</style>
-
-<!-- <div id="loadscreen"></div> -->
 
 <header>
 
@@ -370,8 +298,6 @@ table {
   <style>
 
     #background-image {
-      /* width: 100vw;
-      height: 100vh; */
       top:0; left:0; right:0; bottom:0;
       background-position: center;
       background-repeat: no-repeat;
@@ -664,6 +590,21 @@ table {
             }
           }
 
+          .title_with {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 4rem;
+            h2 {
+              flex: 1;
+              font-size: 2.5rem;
+              margin: 0;
+            }
+            p {
+              flex: 1;
+              margin: 0;
+            }
+          }
+
           .readmore { display: none; }
         }
       }
@@ -673,6 +614,10 @@ table {
             gap: 3rem;
             > li {
               max-width: 100%;
+            }
+
+            .title_with {
+              flex-direction: column;
             }
 
             .readmore {
@@ -934,6 +879,40 @@ table {
 </div>
 
   <article data-hash="#/events" class="events">
+
+    <style>
+
+      .events {
+        .photo_event {
+          &.rtl { flex-direction: row-reverse; }
+          display: flex;
+          gap: 1rem;
+          > div { flex: 1; }
+          > div > img { width: 100%; }
+        }
+        .grid {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 5%;
+          > div { width: 30%; }
+        }
+      }
+      @media only screen and (max-width: 640px) {
+        .events {
+          .photo_event {
+            margin-top: 3rem;
+            flex-direction: column;
+            &.rtl { flex-direction: column; }
+            gap: 0;
+          }
+          .grid {
+            flex-direction: column;
+            > div { width: 100%; }
+          }
+        }
+      }
+
+    </style>
 
     <h1>Why We Only Allow Deliar to Interact During our Soirees: AI Experiments</h1>
     <p>Safety First: At QSTAR Research, the safety and ethical implications of advanced AI interactions are paramount. While Deliar's capabilities are groundbreaking, unrestricted public interaction could pose unforeseen existential risks. Therefore, we have decided to limit Deliar’s public engagement to our AI Experiment Soirees. These controlled environments ensure that we can monitor and assess Deliar’s interactions in real-time, addressing any issues promptly and maintaining a secure experience for all participants.</p>
