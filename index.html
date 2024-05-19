@@ -1342,6 +1342,7 @@ function hashed() {
   window.scrollTo(0, 0);
 }
 
+window.location.hash || (window.location.hash = '#/');
 window.addEventListener('hashchange', hashed);
 hashed();
 
