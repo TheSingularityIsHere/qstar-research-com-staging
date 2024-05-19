@@ -636,35 +636,57 @@ table {
 
     <style>
 
-      .gallery3 {
-        list-style: none;
-        padding: 0;
-        display: flex;
-        flex-flow: row wrap;
-        > li {
-          max-width: 33%;
-          a {
-            display: flex;
-            gap: 0.5rem;
-            flex-direction: column;
+      .research {
 
-            text-decoration: none;
-            &:hover h4 { text-decoration: underline; }
+        .gallery3 {
+          list-style: none;
+          padding: 0;
+          display: flex;
+          flex-flow: row wrap;
+          > li {
+            max-width: 33%;
+            a {
+              display: flex;
+              gap: 0.5rem;
+              flex-direction: column;
 
-            img, video {
-              width: 100%;
-              aspect-ratio: 1;
-            }
-            h4, p {
-              margin: 0;
-              padding: 0 0.4rem;
+              text-decoration: none;
+              &:hover h4 { text-decoration: underline; }
+
+              img, video {
+                width: 100%;
+                aspect-ratio: 1;
+              }
+              h4, p {
+                margin: 0;
+                padding: 0 0.4rem;
+              }
             }
           }
+
+          .readmore { display: none; }
         }
       }
       @media only screen and (max-width: 640px) {
-        .gallery3 > li {
-          max-width: 100%;
+        .research {
+          .gallery3 {
+            gap: 3rem;
+            > li {
+              max-width: 100%;
+            }
+
+            .readmore {
+              display: inline-block;
+              background: #444;
+              margin: 0.5rem 2rem 0 auto;
+              padding: 1rem;
+              border-radius: 1rem;
+              background: var(--fg);
+              background: white;
+              color: var(--bg);
+            }
+            .readmore::before { content: '>> '; }
+          }
         }
       }
 
@@ -683,6 +705,7 @@ table {
           <img data-src="attention_qc.jpg">
           <h4>Quantum-enhanced attention</h4>
           <p>We discovered how to make use of quantum entanglement for effective attention computation accelerating LLMs.</p>
+          <p class="readmore">Read Blog</p>
         </a>
       </li>
       <li>
@@ -690,6 +713,7 @@ table {
           <video autoplay loop muted poster="shattering.jpg"><source data-src="shattering.mp4"></video>
           <h4>Miniaturization</h4>
           <p>We revolutionize quantum computing with a mobile quantum processing unit (MQPU) enabled by a proprietary Q-Lattice architecture and hybrid design.</p>
+          <p class="readmore">Read Blog</p>
         </a>
       </li>
       <li>
@@ -697,6 +721,7 @@ table {
           <video autoplay loop muted poster="energy_scalability.jpg"><source data-src="energy_scalability.mp4"></video>
           <h4>Energy Scalability</h4>
           <p>Increasing energy throughput by orders of magnitude increased coherence and reduced error rates drastically, but new surprising findings broke the correlation.</p>
+          <p class="readmore">Read Blog</p>
         </a>
       </li>
     </ul>
