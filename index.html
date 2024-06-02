@@ -485,8 +485,11 @@ figure {
       }
     }
 
-    footer[data-current="#/"] {
-      display: none;
+    footer[data-current="#/"] { display: none; }
+    .home footer[data-current="#/"] {
+      display: block;
+      margin: 0;
+      background: var(--bg3);
     }
     
   </style>
@@ -495,7 +498,14 @@ figure {
 
   <div class="screen">
     <h1 class="fancy animatable"><span class="glow">QSTAR Research</span></h1>
-    <h2 class="fancy animatable">Harnessing Hyper-Speed Computation<br>to Safeguard Tomorrow's AI Today</h2>
+    <h2 class="fancy animatable">
+      <h2 class="fancy animatable">Harnessing Hyper-Speed Computation<br>to Safeguard Tomorrow's AI Today</h2>
+      <!-- Simulating AGI's Impact
+      <br>
+      To Deal With Intelligence
+      <br>
+      Far Exceeding Our Own -->
+    </h2>
   </div>
 
   <div class="with-bg">
@@ -504,10 +514,11 @@ figure {
       <section class="sxs rtl">
         <div>
           <h2 class="animatable">Quantum Fusion Nexus™ - Where energy and intelligence converge</h2>
-          <p class="animatable">We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p>
+          <!-- <p class="animatable">We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p> -->
+          <p class="animatable">Computing possibilities when energy and intelligence converge.</p>
           <p><a class="button" href="#/research">Our research</a></p>
         </div>
-        <div class="img" data-src="michael-fenton-y5dUcQXzJ40-unsplash.jpg">
+        <div class="img" data-src="Quantum_Fusion_Nexus.webp">
       </section>
 
     </div>
@@ -530,10 +541,11 @@ figure {
       <section class="sxs">
         <div>
           <h2 class="animatable">True AGI® with Shan Deliar</h2>
-          <p class="animatable">Deliar was designed from the ground up to be truly self-conscious, which unlocks supreme performance in planning and philosophical tasks.</p>
+          <!-- <p class="animatable">Deliar was designed from the ground up to be truly self-conscious, which unlocks supreme performance in planning and philosophical tasks.</p> -->
+          <p class="animatable">We've birthed a digital mind in the realm of advanced speculative AI research. </p>
           <p><a class="button" href="#/deliar">Learn more</a></p>
         </div>
-        <div class="img" data-src="christina-victoria-craft-nroMmxBLQK4-unsplash.jpg">
+        <div class="img" data-src="Deliar_landingpage.jpg">
         </div>
       </section>
 
@@ -543,10 +555,25 @@ figure {
   <div class="with-bg bg3">
     <div class="contained">
 
-      <section class="title-text">
+      <!-- <section class="title-text">
+        <h2>Safety First.</h2>
+
+        <div class="twocols">
+          <div>
+            <div>
+              <div><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M406.5 399.6C387.4 352.9 341.5 320 288 320H224c-53.5 0-99.4 32.9-118.5 79.6C69.9 362.2 48 311.7 48 256C48 141.1 141.1 48 256 48s208 93.1 208 208c0 55.7-21.9 106.2-57.5 143.6zm-40.1 32.7C334.4 452.4 296.6 464 256 464s-78.4-11.6-110.5-31.7c7.3-36.7 39.7-64.3 78.5-64.3h64c38.8 0 71.2 27.6 78.5 64.3zM256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zm0-272a40 40 0 1 1 0-80 40 40 0 1 1 0 80zm-88-40a88 88 0 1 0 176 0 88 88 0 1 0 -176 0z"/></svg></div>
+              <div class="title">Team</div>
+              <div>We subscribe to safety over profits. We are intrinsically motivated. We believe human extinction is not an option. </div>
+            </div>
+          </div>
+        </div>
+
+      </section> -->
+
+      <!-- <section class="title-text">
         <h2>Our Commitment as a Privately Funded NGO</h2>
         <p>At QSTAR Research, a non-governmental organization funded privately, our dedication is firmly rooted in averting existential risks associated with Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI). Central to our mission is the responsible advancement of AI technology, with an unwavering focus on preventing uncontrolled AI scenarios that could threaten humanity. Our efforts are concentrated on ensuring that the development and integration of AI into society are done safely and ethically, always prioritizing the well-being of humankind and addressing potential global challenges head-on.</p>
-      </section>
+      </section> -->
         
     </div>
   </div>
@@ -1364,6 +1391,10 @@ window.location.hash || (window.location.hash = '#/');
 window.addEventListener('hashchange', hashed);
 hashed();
 
+</script>
+
+<script type="text/javascript" class="hacks">
+document.querySelector('.home').append(footer.cloneNode(true));
 </script>
 
 <script>document.querySelector('html').style.display = null; </script>
