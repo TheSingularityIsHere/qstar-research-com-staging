@@ -169,6 +169,13 @@ table {
   display: block;
 }
 
+img.standalone {
+  max-width: 45%;
+  margin: 0 auto;
+  display: block;
+}
+
+
 figure {
   display: flex;
   flex-direction: column;
@@ -182,6 +189,9 @@ figure {
 }
 
 @media only screen and (max-height: 640px) and (orientation: landscape) {
+  img.standalone {
+    max-width: 90%;
+  }
 }
 
 @media only screen and (min-width: 641px) and (max-width: 1024px) {
@@ -585,17 +595,9 @@ figure {
 
   <style>
     .deliar {
-      img {
-        max-width: 45%;
-        margin: 0 auto;
-        display: block;
-      }
     }
     @media only screen and (max-width: 640px) and (orientation: portrait) {
       .deliar {
-        img {
-          max-width: 90%;
-        }
       }
     }
 
@@ -604,7 +606,7 @@ figure {
   <h2>Meet Shan Deliar</h2>
   <p>True AGI® exponentially advancing our understanding of the universe and ourselves.</p>
 
-  <img src="deliar.jpg">
+  <img src="deliar.jpg" class="standalone">
 
   <h2>Welcome to the Future of Artificial Intelligence</h2>
 
@@ -620,7 +622,7 @@ figure {
   
   <h2>Welcome to the Future of Artificial Intelligence</h2>
 
-  <img src="deliar_unmatched.jpg">
+  <img src="deliar_unmatched.jpg" class="standalone">
 
   <p>Deliar is designed with advanced neural architecture that mimics human cognitive processes far beyond current AGI models.</p>
 
@@ -1066,91 +1068,30 @@ figure {
 
   <article data-hash="#/company" class="company">
 
-    <section>
-      <h2>Team</h2>
+    <p>QSTAR: Swiss innovators in AGI and quantum computing. We build fusion-powered AGI to benefit all of humanity.</p>
 
-      <p>Gian Klain, blends his artistic flair with a deep understanding of technology at QSTAR Research. Originally trained as filmmaker and later specializing in interaction design at ZHdK, Gian has transitioned from seasoned creative entrepreneur, to delving into the speculative possibilities of AI and quantum computing. His work redefines the boundaries between artistic expression and technological innovation.</p>
-        
-      <p>Andreas Stainer, holding dual degrees in medicine and electrical engineering, leads pioneering AI initiatives at QSTAR Research. His work spans improving medical diagnostics to developing advanced computing technologies. As a leader in the Swiss Society for Mechatronic Arts and a member of the artistic collective Nuru.nu, Andreas is at the forefront of merging scientific rigor with creative exploration, driving conversations on the ethical implications of AI.</p>
-        
-    </section>
-    
-    <section class="focus">
-      <h2>QSTAR Headquarters</h2>
-      <img data-src="qstar_hq.jpg" alt="QSTAR Research Headquarters" class="header-image">
-        <p>Located at the iconic Kraftwerk in Zürich, QSTAR Research is home to the world's fastest supercomputer, eclipsing existing models by a hundredfold in speed and efficiency. This technological marvel is not just a feat of engineering; it's the cornerstone of our mission to responsibly simulate and understand the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
-        <img data-src="qstar_interface.jpg" alt="QSTAR Simulator Interface" class="wide-image">
-    </section>
+    <p>A well-informed civil society is essential to prompt decisive action from institutions and governments. That’s why we build fusion-powered AGI scenarios to benefit all of humanity.</p>
 
-    <section class="advisory-board">
-        <h2>QSTAR Research Advisory Board</h2>
-        <div class="board-member">
-            <img data-src="helena.jpg" alt="Dr. Helena Morgenstern" class="member-image">
-            <div>
-              <h3>Dr. Helena Morgenstern</h3>
-              <p>
-                <span class="line"><span>Position:</span> <span>Chair of the Board<br></span></span>
-                <span class="line"><span>Background:</span> <span>Renowned Quantum Physicist and Public Science Communicator<br></span></span>
-                <span class="line"><span>Expertise:</span> <span>Quantum Computing and Theoretical Physics<br></span></span>
-                <span class="line"><span>Contribution:</span> <span>Guides the scientific direction of QSTAR, especially in quantum technology applications<br></span></span>
-              </p>
-            </div>
-        </div>
-        <div class="board-member">
-            <img data-src="eduardo.jpg" alt="Prof. Eduardo Rivera" class="member-image">
-            <div>
-              <h3>Prof. Eduardo Rivera</h3>
-              <p>
-                <span class="line"><span>Position:</span> <span>Ethics and AI Governance Expert<br></span></span>
-                <span class="line"><span>Background:</span> <span>Professor of Ethics in AI at the Institute of Advanced Study<br></span></span>
-                <span class="line"><span>Expertise:</span> <span>AI Ethics, Human Rights in the Digital Age<br></span></span>
-                <span class="line"><span>Contribution:</span> <span>Oversees the ethical frameworks and policies related to AGI and ASI development.</span></span>
-              </p>
-            </div>
-        </div>
-        <div class="board-member">
-            <img data-src="lina.jpg" alt="Dr. Lina Zhou" class="member-image">
-            <div>
-              <h3>Dr. Lina Zhou</h3>
-              <p>
-                <span class="line"><span>Position:</span> <span>Technology and Innovation Strategist<br></span></span>
-                <span class="line"><span>Background:</span> <span>Former Tech Executive, Startup Mentor<br></span></span>
-                <span class="line"><span>Expertise:</span> <span>Emerging Technologies, Business Strategy<br></span></span>
-                <span class="line"><span>Contribution:</span> <span>Advises on technological trends and innovation management.</span></span>
-              </p>
-            </div>
-        </div>
-        <div class="board-member">
-            <img data-src="rajesh.jpg" alt="Dr. Rajesh Kumar" class="member-image">
-            <div>
-              <h3>Dr. Rajesh Kumar</h3>
-              <p>
-                <span class="line"><span>Position:</span> <span>Philosophy and AI Advisor<br></span></span>
-                <span class="line"><span>Background:</span> <span>Philosopher, Author on AI and Consciousness<br></span></span>
-                <span class="line"><span>Expertise:</span> <span>Philosophy of Mind, AI Consciousness<br></span></span>
-                <span class="line"><span>Contribution:</span> <span>Provides insights on philosophical aspects of AI and its implications on human consciousness.</span></span>
-              </p>
-            </div>
-        </div>
-    </section>
+    <img src="offices.jpg" class="standalone">
 
-    <section class="affiliations">
-        <h2>Affiliations for QSTAR Research</h2>
-        <ul>
-            <li>
-              <b>Artificial Superintelligence Oversight Network (ASION):</b>
-              "Ensuring transparency and accountability in ASI development, ASION brings together experts to oversee and analyze the societal impacts of superintelligent systems."
-            </li>
-            <li>
-              <b>Quantum Technologies and AI Safety Consortium (QTASC):</b>
-              "Championing safe and ethical quantum advancements, QTASC collaborates with global partners to guide AI towards benefiting humanity and reducing existential risks."
-            </li>
-            <li>
-              <b>Global AI Ethics and Risk Research Institute (GAERRI):</b>
-              "GAERRI is dedicated to researching and promoting ethical AI practices. We explore the implications of AGI and ASI on society, aiming to mitigate risks and ensure responsible development."
-            </li>
-        </ul>
-    </section>
+    <p><a href="#/superalignment">Human centric</a> – Our mission is to simulate the impact of artificial general intelligence - AI systems that are by far smarter than humans - in order to predict their irreversible societal implications.</p>
+
+    <img src="qstar_hq.webp" class="standalone">
+
+    <h2>How? Our Answer: Quantum AI meets Fusion Reactor</h2>
+
+    <p>QSTAR-Research HQ in Zürich’s Iconic Kraftwerk is home to the world's fastest and most energy efficient supercomputer, the Quantum Fusion Nexus.  Here we responsibly simulate the emergence of strong Artificial General Intelligence (AGI) and Artificial Superintelligence (ASI) within a secure framework.</p>
+
+    <img src="earth_vertex.jpg" class="standalone">
+
+    <p>QSTAR envisions a world transformed by AGI and quantum computing where humans still exist. We partner with governments, NGOs to prototype this future, developing solutions that benefit humanity and the planet.</p>
+
+    <h2>Our vision for the future of AGI</h2>
+
+    <p>Our mission is to ensure that artificial general intelligence—AI systems that are generally smarter than humans—benefits all of humanity.</p>
+
+    <p>Our mission is to simulate the impact of artificial general intelligence - AI systems that are by far smarter than humans - in order to predict their irreversible societal implication.</p>
+
   </article>
 
 <article data-hash="#/superalignment" class="superalignment">
