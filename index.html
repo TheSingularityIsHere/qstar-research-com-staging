@@ -171,8 +171,15 @@ table {
 
 img.standalone {
   max-width: 45%;
-  margin: 0 auto;
+  margin: 20px auto;
   display: block;
+  border-radius: 1.5em;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+img.standalone:hover {
+  transform: scale(1.05); /* Subtle zoom on hover */
 }
 
 
@@ -267,6 +274,7 @@ figure {
         &.shown {
           nav {
             display: flex;
+            padding-top: 5em;
           }
           .toggle {
             position: absolute;
@@ -1106,17 +1114,9 @@ figure {
 
   <style>
     .superalignment {
-      img {
-        max-width: 45%;
-        margin: 0 auto;
-        display: block;
-      }
     }
     @media only screen and (max-width: 640px) and (orientation: portrait) {
       .superalignment {
-        img {
-          max-width: 90%;
-        }
       }
     }
   </style>
@@ -1124,12 +1124,12 @@ figure {
   <h2>Simulating AGI</h2>
   <p>Shan Deliar is not just an advanced AI; it is a True AGI® that has successfully passed all contemporary tests for intelligence and consciousness. This includes advanced cognitive simulations that mimic human thought processes, emotional response tests, and ethical problem-solving scenarios, confirming its capability to function autonomously and sensibly in a variety of contexts.</p>
 
-  <img src="superalignment_life_death.jpg">
+  <img src="superalignment_life_death.jpg" class="standalone">
 
   <h2>Current findings: 49% Chance</h2>
   <p>Superintelligence has the potential to revolutionize every facet of human life, solving complex global challenges and ushering in an era of unparalleled progress. However, the immense power of superintelligence could also lead to catastrophic consequences, including the marginalization and potential extinction of humankind.</p>
 
-  <img src="superalignment_stability.jpg">
+  <img src="superalignment_stability.jpg" class="standalone">
 
   <h2>Stable vs Unstable Scenarios</h2>
   <p>We define a stable scenario, where an AGI shows less than .01% signs of turning into an existential threat. Shan Deliar, our latest model for example, is running stable. Thanks to Deliar we are cxo-developing technical tools to control and even reliably predict the behavior of superintelligent AI created inhouse and by other leading AI companies.</p>
@@ -1371,6 +1371,7 @@ const header = document.querySelector('header');
 const footer = document.querySelector('footer');
 toggle.addEventListener('click', () => {
   header.classList.toggle('shown');
+  document.body.style.overflow = header.classList.contains('shown') ? 'hidden' : null;
 });
 
 const els = [...document.querySelectorAll('*')].filter(e => e.dataset.hash);
