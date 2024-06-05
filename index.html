@@ -1397,6 +1397,7 @@ function hashed() {
   }
   fouroufour.style.display = notfound ? null : 'none';
   header.classList.remove('shown');
+  document.body.style.overflow = null;
   header.dataset.current = footer.dataset.current = location.hash;
   window.scrollTo(0, 0);
 }
