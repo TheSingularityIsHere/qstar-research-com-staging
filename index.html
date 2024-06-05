@@ -20,6 +20,8 @@
 
 :root {
   --fg: #ddd;
+  --glow: violet;
+  --blue: #007bff;
   --bg: rgb(6, 1, 43);
   --bg2: rgb(44, 8, 87);
   --bg3: rgb(24, 0, 65);
@@ -55,10 +57,6 @@ a, a:visited {
   color: var(--fg);
 }
 
-.header-image, .wide-image, .member-image {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-}
-
 article {
   padding: 0 0.5rem;
   max-width: var(--max-width);
@@ -71,45 +69,46 @@ article {
   }
 }
 
-.header-image {
-  width: 100%;
-  height: auto;
+p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
 }
 
-.wide-image {
-  width: 100%;
-  height: auto;
-  margin: 20px 0;
+ul {
+  list-style: none;
+  padding: 0;
 }
 
-.member-image {
-  width: 20%;
-  max-width: 10rem;
-  height: auto;
-  aspect-ratio: 1 / 1;
+li {
+  position: relative;
+  margin-bottom: 1rem;
+  padding-left: 2rem;
+}
+
+li::before {
+  content: '';
+  position: absolute;
+  top: 0.5em;
+  left: 0.25em;
+  width: 0.3em;
+  height: 0.3em;
   border-radius: 50%;
-  display: block;
+  background-color: var(--fg);
 }
 
-.button, .button:visited {
-  display: block;
-  text-decoration: none;
-  background: white;
-  color: var(--bg);
+.readmore {
+  margin: 0.5rem 2rem 0 auto;
   padding: 1rem;
   border-radius: 1rem;
-  cursor: pointer;
+  background: var(--fg);
+  background: linear-gradient(45deg, var(--blue), var(--glow));
+  color: var(--bg);
 }
+.readmore::before { content: '>> '; }
 
-.board-member {
-  margin-bottom: 20px;
-  display: flex;
-  gap: 2rem;
-  align-items: center;
-}
-
-.board-member > div {
-  flex-grow: 1;
+.button, .button:visited {
+  color: var(--bg);
+  text-decoration: none;
 }
 
 @media only screen and (max-width: 640px) and (orientation: portrait) {
@@ -170,13 +169,8 @@ table {
 }
 
 img.standalone {
-  /* max-width: 45%;
-  margin: 20px auto;
-  display: block;
-  border-radius: 1.5em;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-  transition: transform 0.3s ease; */
-  max-width: 45%;
+  width: 45%;
+  &.wide { width: 60%; }
   margin: 30px auto;
   display: block;
   border-radius: 12px;
@@ -187,7 +181,6 @@ img.standalone {
 }
 
 img.standalone:hover {
-  /* transform: scale(1.05); */
   transform: scale(1.1) translateY(-5px);
   box-shadow: 0 12px 24px rgba(0,0,0,0.4);
   filter: contrast(1.2) brightness(1.1);
@@ -196,7 +189,7 @@ img.standalone:hover {
 figure {
   display: flex;
   flex-direction: column;
-  max-width: 90%;
+  width: 90%;
   align-items: center;
   > .scrollable {
     overflow: scroll;
@@ -213,7 +206,7 @@ figure {
 
 @media only screen and (max-width: 640px) and (orientation: portrait) {
   img.standalone {
-    max-width: 90%;
+    width: 90%;
   }
 }
 </style>
@@ -257,28 +250,6 @@ figure {
       }
     }
     
-    footer {
-      display: flex;
-      margin-top: 4rem;
-      border-top: 1px solid;
-      padding: 2rem;
-      white-space: pre;
-      a {
-        text-decoration: none;
-      }
-      .navs {
-        display: flex;
-        flex: 1;
-        nav {
-          display: flex;
-          gap: 1rem;
-        }
-      .spacer {
-          flex: 1
-        }
-      }
-    }
-    
     @media only screen and (max-width: 640px) {
       header {
         &.shown {
@@ -319,9 +290,6 @@ figure {
           top: 0;
           left: 0;
         }
-      }
-      footer .navs {
-        flex-direction: column;
       }
     }
   </style>
@@ -412,7 +380,7 @@ figure {
           }
         }
         .glow {
-          text-shadow: 0 0 10px violet, 0 0 20px violet, 0 0 30px violet;
+          text-shadow: 0 0 10px var(--glow), 0 0 20px var(--glow), 0 0 30px var(--glow);
         }
       }
 
@@ -554,7 +522,7 @@ figure {
           <h2 class="animatable">Quantum Fusion Nexus™ - Where energy and intelligence converge</h2>
           <!-- <p class="animatable">We are building the worlds first Quantum Computational Fusion Reactor, our answer to scaling intelligence exponentially.</p> -->
           <p class="animatable">Computing possibilities when energy and intelligence converge.</p>
-          <p><a class="button" href="#/research">Our research</a></p>
+          <p><a class="button readmore" href="#/research">Our research</a></p>
         </div>
         <div class="img" data-src="Quantum_Fusion_Nexus.webp">
       </section>
@@ -581,7 +549,7 @@ figure {
           <h2 class="animatable">True AGI® with Shan Deliar</h2>
           <!-- <p class="animatable">Deliar was designed from the ground up to be truly self-conscious, which unlocks supreme performance in planning and philosophical tasks.</p> -->
           <p class="animatable">We've birthed a digital mind in the realm of advanced speculative AI research. </p>
-          <p><a class="button" href="#/deliar">Learn more</a></p>
+          <p><a class="button readmore" href="#/deliar">Learn more</a></p>
         </div>
         <div class="img" data-src="Deliar_landingpage.jpg">
         </div>
@@ -671,19 +639,31 @@ figure {
       .research {
 
         .gallery3 {
+          margin-top: 3rem;
           list-style: none;
           padding: 0;
-          display: flex;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
           flex-flow: row wrap;
-          > li {
-            max-width: 33%;
+          gap: 0.5em;
+          > div {
+            /* max-width: 33%; */
+            /* background: white; */
+            border-radius: 1rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+
             a {
               display: flex;
               gap: 0.5rem;
               flex-direction: column;
 
               text-decoration: none;
-              &:hover h4 { text-decoration: underline; }
+              transition: transform 0.3s ease;
+              &:hover {
+                transform: translateY(-5px);
+                h4 { text-decoration: underline }
+              }
 
               img, video {
                 width: 100%;
@@ -718,25 +698,16 @@ figure {
         .research {
           .gallery3 {
             gap: 3rem;
-            > li {
+            > div {
               max-width: 100%;
             }
 
             .title_with {
               flex-direction: column;
             }
-
-            .readmore {
-              display: inline-block;
-              background: #444;
-              margin: 0.5rem 2rem 0 auto;
-              padding: 1rem;
-              border-radius: 1rem;
-              background: var(--fg);
-              background: white;
-              color: var(--bg);
-            }
-            .readmore::before { content: '>> '; }
+          }
+          .readmore { 
+            display: inline-block;
           }
         }
       }
@@ -750,32 +721,32 @@ figure {
       Since the competitive pressure is very high, we can unfortunately only publish a fraction of our research. You can reach out to our research leads if you want to learn more.</p>
     </div>
 
-    <ul class="gallery3">
-      <li>
+    <div class="gallery3">
+      <div>
         <a href="#/research/miniaturization">
           <video autoplay loop muted poster="shattering.jpg"><source data-src="shattering.mp4"></video>
           <h4>Miniaturization</h4>
           <p>We revolutionize quantum computing with a mobile quantum processing unit (MQPU) enabled by a proprietary Q-Lattice architecture and hybrid design.</p>
           <p class="readmore">Read Blog</p>
         </a>
-      </li>
-      <li>
+      </div>
+      <div>
         <a href="#/research/energy">
           <video autoplay loop muted poster="energy_scalability.jpg"><source data-src="energy_scalability.mp4"></video>
           <h4>Energy Scalability</h4>
           <p>Increasing energy throughput by orders of magnitude increased coherence and reduced error rates drastically, but new surprising findings broke the correlation.</p>
           <p class="readmore">Read Blog</p>
         </a>
-      </li>
-      <li>
+      </div>
+      <div>
         <a href="#/research/attention_qc">
         <video autoplay loop muted poster="attention_qc.jpg"><source data-src="attention_qc.mp4"></video>
         <h4>Quantum-enhanced attention</h4>
         <p>We discovered how to make use of quantum entanglement for effective attention computation accelerating LLMs.</p>
         <p class="readmore">Read Blog</p>
       </a>
-    </li>
-  </ul>
+    </div>
+  </div>
 
   </article>
 
@@ -992,10 +963,23 @@ figure {
     <style>
 
       .events {
+        a {
+          transition: color 0.3s ease;
+          &:hover {
+            color: var(--glow);
+          }
+        }
         .photo_event {
           &.rtl { flex-direction: row-reverse; }
           display: flex;
           gap: 1rem;
+          margin-bottom: 3rem;
+          img {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease;
+            &:hover { transform: scale(1.05); }
+          }
           > div { flex: 1; }
           > div > img { width: 100%; }
         }
@@ -1096,13 +1080,13 @@ figure {
 
     <p>QSTAR: Swiss innovators in AGI and quantum computing. We build fusion-powered AGI to benefit all of humanity.</p>
 
-    <p>A well-informed civil society is essential to prompt decisive action from institutions and governments. That’s why we build fusion-powered AGI scenarios to benefit all of humanity.</p>
+    <p>A well-informed civil society is essential to prompt decisive action from institutions and governments. That's why we build fusion-powered AGI scenarios to benefit all of humanity.</p>
 
-    <img src="offices.jpg" class="standalone">
+    <img src="offices.jpg" class="standalone wide">
 
-    <p><a href="#/superalignment">Human centric</a> – Our mission is to simulate the impact of artificial general intelligence - AI systems that are by far smarter than humans - in order to predict their irreversible societal implications.</p>
+    <p><a href="#/superalignment">Human centric</a>: Our mission is to simulate the impact of artificial general intelligence – AI systems that are by far smarter than humans – in order to predict their irreversible societal implications.</p>
 
-    <img src="qstar_hq.webp" class="standalone">
+    <img src="qstar_hq.webp" class="standalone wide">
 
     <h2>How? Our Answer: Quantum AI meets Fusion Reactor</h2>
 
@@ -1114,7 +1098,7 @@ figure {
 
     <h2>Our vision for the future of AGI</h2>
 
-    <p>Our mission is to ensure that artificial general intelligence—AI systems that are generally smarter than humans—benefits all of humanity.</p>
+    <p>Our mission is to ensure that artificial general intelligence – AI systems that are generally smarter than humans – benefits all of humanity.</p>
 
     <p>Our mission is to simulate the impact of artificial general intelligence - AI systems that are by far smarter than humans - in order to predict their irreversible societal implication.</p>
 
@@ -1252,17 +1236,73 @@ figure {
 
 <footer>
 
+  <style>
+
+    footer {
+      display: flex;
+      margin-top: 4rem;
+      border-top: 1px solid;
+      padding: 2rem;
+      white-space: pre;
+      a {
+        text-decoration: none;
+      }
+      .navs {
+        display: flex;
+        flex: 1;
+        nav {
+          display: flex;
+          gap: 2rem;
+          a {
+            display: inline-flex;
+            svg {
+              height: 1.5rem;
+              width: auto;
+              overflow: visible;
+              path, rect {
+                fill: var(--fg);
+                stroke: var(--fg);
+              }
+            }
+          }
+        }
+      .spacer {
+          flex: 1
+        }
+      }
+    }
+
+    @media only screen and (max-width: 640px) {
+      footer .navs {
+        flex-direction: column;
+        nav {
+          justify-content: center;
+        }
+      }
+    }
+  </style>
+
   <div class="navs">
+    
     <nav>
-      <a href="https://twitter.com/qstar_research" target="_blank">Twitter</a>
-      <a href="https://ch.linkedin.com/company/qstar-research" target="_blank">LinkedIn</a>
-      <a href="mailto:info@qstar-research.com" target="_blank">Email</a>
+      <a href="https://twitter.com/qstar_research" target="_blank">
+        <svg viewbox="0 0 300 271" xmlns="http://www.w3.org/2000/svg"><path d="m236 0h46l-101 115 118 156h-92.6l-72.5-94.8-83 94.8h-46l107-123-113-148h94.9l65.5 86.6zm-16.1 244h25.5l-165-218h-27.4z"/></svg>    
+      </a>
+      <!-- svgrepo.com -->
+      <a href="https://ch.linkedin.com/company/qstar-research" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-103 185 432 432" xml:space="preserve"><g><path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7 c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4 c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8 c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4 c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"/><rect x="-8.5" y="348.4" width="49.9" height="159.7" /><path d="M15.4,273c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7 C45.1,284.9,33.8,273,15.4,273z"/><path d="M177.7,346.9c-28.6,0-46.5,15.6-49.8,26.6v-25.1H71.8c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1 c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4v82.6H241v-88.8C241,369.9,213.2,346.9,177.7,346.9z"/></g></svg>
+      </a>
+      <a href="mailto:info@qstar-research.com" target="_blank">
+        <svg fill="#000000" viewBox="200 200 1920 1520" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 1694.235h1920V226H0v1468.235ZM112.941 376.664V338.94H1807.06v37.723L960 1111.233l-847.059-734.57ZM1807.06 526.198v950.513l-351.134-438.89-88.32 70.475 378.353 472.998H174.042l378.353-472.998-88.32-70.475-351.134 438.89V526.198L960 1260.768l847.059-734.57Z" fill-rule="evenodd"/>
+      </svg>
+      </a>
     </nav>
     <div class="spacer">&nbsp;</div>
     <nav>
       <a href="#/privacy">Privacy</a>
       <a href="#/terms-of-use">Terms of Use</a>
-      <div>©QSTAR 2024</div>
+      <div>© QSTAR 2024</div>
     </nav>
   </div>
 </div>
